@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AISU - Tracks & Sectors</title>
+    <!-- Load Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Load Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Roboto Mono', 'monospace'],
+                    },
+                    colors: {
+                        primary: '#111827', // Almost black
+                        accent: '#3b82f6', // Medium blue
+                        'accent-dark': '#1e40af',
+                        'bg-card': '#ffffff',
+                        'border-light': '#e5e7eb',
+                    }
+                }
+            }
+        }
+    </script>
+    <style data-purpose="custom-grid-background">
+        .bg-graph-paper {
+            background-color: #ffffff;
+            background-image:
+                linear-gradient(to right, #f3f4f6 1px, transparent 1px),
+                linear-gradient(to bottom, #f3f4f6 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 700px;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-primary antialiased bg-white relative">
+    <!-- Background Grid Pattern -->
+    <div class="bg-graph-paper"></div>
+
+    <!-- BEGIN: MainHeader -->
+    <header class="w-full pt-6 pb-4 px-6 md:px-12 flex justify-between items-center relative z-10">
+        <!-- Logo Section -->
+        <div class="flex items-center gap-3 cursor-pointer" onclick="window.location.href='index.html'">
+            <div class="h-10 w-10 flex items-center justify-center overflow-hidden rounded">
+                <img src="assets/logo.jpg" alt="AISU Logo" class="w-full h-full object-cover">
+            </div>
+            <span class="text-xl font-bold tracking-tight text-gray-600">AISU <span
+                    class="text-gray-400 font-normal">COMMUNITY</span></span>
+        </div>
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="font-mono text-sm text-gray-500 hover:text-accent transition-colors" href="index.html">/home</a>
+            <a class="font-mono text-sm text-gray-500 hover:text-accent transition-colors" href="team.html">/team</a>
+            <a class="font-mono text-sm text-gray-900 font-semibold border-b-2 border-transparent hover:border-accent transition-all"
+                href="tracks.html">/tracks</a>
+            <a class="font-mono text-sm text-gray-500 hover:text-accent transition-colors" href="#">/join</a>
+        </nav>
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden text-gray-500"
+            onclick="document.getElementById('mobile-menu-tracks').classList.toggle('hidden')">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+            </svg>
+        </button>
+    </header>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu-tracks"
+        class="hidden md:hidden bg-white border-b border-gray-100 p-4 absolute w-full top-20 left-0 z-40 shadow-lg">
+        <a class="block py-2 px-4 hover:bg-gray-50 rounded font-mono text-sm" href="index.html">/home</a>
+        <a class="block py-2 px-4 hover:bg-gray-50 rounded font-mono text-sm" href="team.html">/team</a>
+        <a class="block py-2 px-4 text-accent font-bold bg-gray-50 rounded font-mono text-sm"
+            href="tracks.html">/tracks</a>
+        <a class="block py-2 px-4 hover:bg-gray-50 rounded font-mono text-sm" href="#">/join</a>
+    </div>
+    <!-- END: MainHeader -->
+
+    <!-- BEGIN: HeroSection -->
+    <section class="px-6 md:px-12 pt-16 pb-16 max-w-7xl mx-auto relative z-10">
+        <!-- Version Tag -->
+        <div class="inline-flex items-center bg-blue-50 border border-blue-100 rounded-full px-3 py-1 mb-6">
+            <span class="h-2 w-2 rounded-full bg-yellow-400 mr-2"></span>
+            <span class="font-mono text-xs text-blue-600 font-medium tracking-wide">SYSTEM_OVERVIEW v2.0</span>
+        </div>
+        <!-- Main Title -->
+        <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6">
+            Tracks &amp; <span class="text-blue-600">Sectors</span>
+        </h1>
+        <!-- Description -->
+        <p class="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
+            Discover your role in the AI Student Universe. Whether you build the future with code or shape it through
+            operations, every unit is critical to our ecosystem.
+        </p>
+    </section>
+    <!-- END: HeroSection -->
+
+    <!-- BEGIN: MainContent -->
+    <main class="px-6 md:px-12 pb-24 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+            <!-- BEGIN: TechnicalTracks (Left Column) -->
+            <div class="lg:col-span-7 flex flex-col gap-6">
+                <div class="flex justify-between items-center border-b border-gray-200 pb-4">
+                    <div class="flex items-center gap-2">
+                        <svg class="h-5 w-5 opacity-60" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path
+                                d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                        <h2 class="text-xl font-semibold">Technical Tracks</h2>
+                    </div>
+                    <span class="bg-gray-100 text-gray-500 text-xs font-mono px-2 py-1 rounded">MOD_TECH</span>
+                </div>
+                <!-- Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Card 1: AI -->
+                    <article
+                        class="cursor-pointer bg-white border rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col h-full shadow-sm border-gray-100"
+                        onclick="window.location.href='tracks/ai.html'">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="font-mono text-xs text-gray-400">TRK-01</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Artificial Intelligence</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
+                            Machine learning models, neural networks, and deep learning...
+                        </p>
+                        <div class="h-1 w-8 bg-gray-100 rounded"></div>
+                    </article>
+                    <!-- Card 2: Data Analysis -->
+                    <article
+                        class="cursor-pointer bg-white border rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col h-full shadow-sm border-gray-100"
+                        onclick="window.location.href='tracks/data_analysis.html'">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="font-mono text-xs text-gray-400">TRK-02</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Data Analysis</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
+                            Transforming raw data into actionable insights using Python...
+                        </p>
+                        <div class="h-1 w-8 bg-gray-100 rounded"></div>
+                    </article>
+                    <!-- Card 3: Web Dev -->
+                    <article
+                        class="cursor-pointer bg-white border rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col h-full shadow-sm border-gray-100"
+                        onclick="window.location.href='tracks/web_development.html'">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="font-mono text-xs text-gray-400">TRK-03</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Web Development</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
+                            Building scalable full-stack applications for the modern web.
+                        </p>
+                        <div class="h-1 w-8 bg-gray-100 rounded"></div>
+                    </article>
+                    <!-- Card 4: Flutter -->
+                    <article
+                        class="cursor-pointer bg-white border rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col h-full shadow-sm border-gray-100"
+                        onclick="window.location.href='tracks/flutter.html'">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="font-mono text-xs text-gray-400">TRK-04</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Flutter</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
+                            Cross-platform mobile application development with a single codebase.
+                        </p>
+                        <div class="h-1 w-8 bg-gray-100 rounded"></div>
+                    </article>
+                    <!-- Card 5: Robotics -->
+                    <article
+                        class="cursor-pointer bg-white border rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col h-full shadow-sm border-gray-100"
+                        onclick="window.location.href='tracks/robotics.html'">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="font-mono text-xs text-gray-400">TRK-05</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Robotics</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
+                            Hardware integration, embedded systems, and autonomous agents.
+                        </p>
+                        <div class="h-1 w-8 bg-gray-100 rounded"></div>
+                    </article>
+                    <!-- Card 6: Cyber Security -->
+                    <article
+                        class="cursor-pointer bg-white border rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col h-full shadow-sm border-gray-100"
+                        onclick="window.location.href='tracks/cyber_security.html'">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="font-mono text-xs text-gray-400">TRK-06</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Cyber Security</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
+                            Network defense, ethical hacking, and information assurance.
+                        </p>
+                        <div class="h-1 w-8 bg-gray-100 rounded"></div>
+                    </article>
+                </div>
+            </div>
+            <!-- END: TechnicalTracks -->
+
+            <!-- BEGIN: NonTechnicalSectors (Right Column) -->
+            <div class="lg:col-span-5 flex flex-col gap-6">
+                <div class="flex justify-between items-center border-b border-gray-200 pb-4">
+                    <div class="flex items-center gap-2">
+                        <svg class="h-5 w-5 opacity-60" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                        <h2 class="text-xl font-semibold">Non-Technical Sectors</h2>
+                    </div>
+                    <span class="bg-gray-100 text-gray-500 text-xs font-mono px-2 py-1 rounded">MOD_OPS</span>
+                </div>
+                <!-- Vertical Stack -->
+                <div class="flex flex-col gap-4">
+                    <!-- Sector 1 -->
+                    <div class="bg-white border border-border-light rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm"
+                        onclick="window.location.href='sectors/public_relations.html'">
+                        <div
+                            class="h-12 w-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
+                            <svg class="h-6 w-6 text-gray-600 opacity-80" fill="none" stroke="currentColor"
+                                viewbox="0 0 24 24">
+                                <path
+                                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900">Public Relations</h3>
+                            <p class="font-mono text-xs text-gray-400 mt-1">SEC-01</p>
+                        </div>
+                    </div>
+                    <!-- Sector 2 -->
+                    <div class="bg-white border border-border-light rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm"
+                        onclick="window.location.href='sectors/human_resources.html'">
+                        <div
+                            class="h-12 w-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
+                            <svg class="h-6 w-6 text-gray-600 opacity-80" fill="none" stroke="currentColor"
+                                viewbox="0 0 24 24">
+                                <path
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900">Human Resources</h3>
+                            <p class="font-mono text-xs text-gray-400 mt-1">SEC-02</p>
+                        </div>
+                    </div>
+                    <!-- Sector 3 -->
+                    <div class="bg-white border border-border-light rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm"
+                        onclick="window.location.href='sectors/events_ops.html'">
+                        <div
+                            class="h-12 w-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
+                            <svg class="h-6 w-6 text-gray-600 opacity-80" fill="none" stroke="currentColor"
+                                viewbox="0 0 24 24">
+                                <path
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900">Events &amp; Ops</h3>
+                            <p class="font-mono text-xs text-gray-400 mt-1">SEC-03</p>
+                        </div>
+                    </div>
+                    <!-- Sector 4 -->
+                    <div class="bg-white border border-border-light rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm"
+                        onclick="window.location.href='sectors/media.html'">
+                        <div
+                            class="h-12 w-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
+                            <svg class="h-6 w-6 text-gray-600 opacity-80" fill="none" stroke="currentColor"
+                                viewbox="0 0 24 24">
+                                <path
+                                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900">Media</h3>
+                            <p class="font-mono text-xs text-gray-400 mt-1">SEC-04</p>
+                        </div>
+                    </div>
+                    <!-- Sector 5 -->
+                    <div class="bg-white border border-border-light rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm"
+                        onclick="window.location.href='sectors/documentation.html'">
+                        <div
+                            class="h-12 w-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
+                            <svg class="h-6 w-6 text-gray-600 opacity-80" fill="none" stroke="currentColor"
+                                viewbox="0 0 24 24">
+                                <path
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900">Documentation</h3>
+                            <p class="font-mono text-xs text-gray-400 mt-1">SEC-05</p>
+                        </div>
+                    </div>
+                    <!-- Sector 6 -->
+                    <div class="bg-white border border-border-light rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm"
+                        onclick="window.location.href='sectors/finance.html'">
+                        <div
+                            class="h-12 w-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
+                            <svg class="h-6 w-6 text-gray-600 opacity-80" fill="none" stroke="currentColor"
+                                viewbox="0 0 24 24">
+                                <path
+                                    d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900">Finance</h3>
+                            <p class="font-mono text-xs text-gray-400 mt-1">SEC-06</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END: NonTechnicalSectors -->
+        </div>
+    </main>
+    <!-- END: MainContent -->
+
+    <!-- BEGIN: Footer -->
+    <footer class="border-t mt-auto bg-white border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center md:items-baseline">
+                <span class="font-bold text-gray-900">AISU</span>
+                <span class="text-sm text-gray-500">AI Student Universe © 2023</span>
+            </div>
+            <div>
+                <a class="text-gray-400 hover:text-gray-600 transition-colors" href="#">
+                    <svg class="h-6 w-6 opacity-60 hover:opacity-100" fill="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- END: Footer -->
+
+</body>
+
+</html>

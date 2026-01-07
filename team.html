@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AISU - Team</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#003B6F", // Deep Navy Blue from logo
+                        secondary: "#F9A61A", // Yellow/Orange from logo
+                        accent: "#E94E34", // Red from logo
+                        "background-light": "#F3F4F6", // Cool gray/white
+                        "background-dark": "#0B1120", // Deep slate/black
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#151e32",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Space Grotesk", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0px", // Technical/Austere feel often implies sharp edges or minimal radius
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background-color: #334155;
+        }
+
+        .tech-grid {
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .dark .tech-grid {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 transition-colors duration-300 min-h-screen flex flex-col font-sans">
+    <header
+        class="w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4 cursor-pointer" onclick="window.location.href='index.html'">
+                <div class="h-12 w-12 overflow-hidden flex items-center justify-center">
+                    <img src="assets/logo.jpg" alt="AISU Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="hidden sm:block">
+                    <h1 class="font-display font-bold text-xl tracking-tight leading-none text-primary dark:text-white">
+                        AISU</h1>
+                    <span
+                        class="text-xs font-mono text-slate-500 dark:text-slate-400 tracking-widest uppercase">Community</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-mono uppercase tracking-wider">
+                <a class="hover:text-primary dark:hover:text-secondary transition-colors" href="index.html">Home</a>
+                <a class="text-primary dark:text-secondary font-bold" href="team.html">Team</a>
+                <a class="hover:text-primary dark:hover:text-secondary transition-colors" href="tracks.html">Tracks</a>
+                <a class="hover:text-primary dark:hover:text-secondary transition-colors" href="#">Join</a>
+            </nav>
+            <button class="md:hidden text-slate-800 dark:text-white"
+                onclick="document.getElementById('mobile-menu-team').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu Team -->
+        <div id="mobile-menu-team"
+            class="hidden md:hidden bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 p-4 absolute w-full top-20 left-0 z-40 shadow-lg">
+            <a class="block py-2 px-4 hover:bg-slate-200 dark:hover:bg-slate-800 rounded font-mono uppercase text-sm"
+                href="index.html">Home</a>
+            <a class="block py-2 px-4 text-primary dark:text-secondary font-bold bg-slate-200 dark:bg-slate-800 rounded font-mono uppercase text-sm"
+                href="team.html">Team</a>
+            <a class="block py-2 px-4 hover:bg-slate-200 dark:hover:bg-slate-800 rounded font-mono uppercase text-sm"
+                href="tracks.html">Tracks</a>
+            <a class="block py-2 px-4 hover:bg-slate-200 dark:hover:bg-slate-800 rounded font-mono uppercase text-sm"
+                href="#">Join</a>
+        </div>
+    </header>
+    <main class="flex-grow tech-grid relative">
+        <div
+            class="absolute top-0 right-0 w-1/3 h-full bg-slate-100 dark:bg-slate-900/50 -z-10 hidden lg:block border-l border-slate-200 dark:border-slate-800">
+        </div>
+        <div class="max-w-7xl mx-auto px-6 py-16 lg:py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-3 lg:sticky lg:top-32 h-fit">
+                    <div class="flex flex-col gap-4">
+                        <div class="h-1 w-12 bg-secondary mb-2"></div>
+                        <h2
+                            class="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">
+                            Our<br />Structure
+                        </h2>
+                        <p
+                            class="font-mono text-xs text-slate-500 dark:text-slate-400 mt-4 leading-relaxed max-w-xs uppercase tracking-wide">
+                            // 2023-2024 Board<br />
+                            // Horus University<br />
+                            // Status: Active
+                        </p>
+                        <p
+                            class="text-slate-600 dark:text-slate-400 mt-4 text-sm leading-relaxed border-l-2 border-slate-200 dark:border-slate-700 pl-4">
+                            Driven by students, for students. We are building the next generation of AI researchers and
+                            engineers.
+                        </p>
+                    </div>
+                </div>
+                <div class="lg:col-span-9">
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-200 dark:bg-slate-800 border border-slate-200 dark:border-slate-800">
+                        <div
+                            class="bg-background-light dark:bg-background-dark p-8 md:col-span-2 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
+                            <span
+                                class="inline-block px-2 py-1 mb-3 text-xs font-mono font-medium text-primary bg-primary/10 dark:text-secondary dark:bg-secondary/10 uppercase tracking-wider rounded-sm">
+                                01 — Leadership
+                            </span>
+                            <div class="flex flex-col md:flex-row md:items-end justify-between gap-2">
+                                <div>
+                                    <h3
+                                        class="font-display text-2xl font-semibold text-slate-900 dark:text-white group-hover:text-primary dark:group-hover:text-secondary transition-colors">
+                                        Ahmed Gad</h3>
+                                    <p class="font-mono text-sm text-slate-500 dark:text-slate-400 mt-1">President</p>
+                                </div>
+                                <div class="hidden md:block w-12 h-px bg-slate-300 dark:bg-slate-700 mb-2"></div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-background-light dark:bg-background-dark p-8 md:col-span-2 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
+                            <span
+                                class="inline-block px-2 py-1 mb-3 text-xs font-mono font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 uppercase tracking-wider rounded-sm">
+                                02 — Leadership &amp; Research
+                            </span>
+                            <h3
+                                class="font-display text-2xl font-semibold text-slate-900 dark:text-white group-hover:text-primary dark:group-hover:text-secondary transition-colors">
+                                Mahmoud Hesham</h3>
+                            <p class="font-mono text-sm text-slate-500 dark:text-slate-400 mt-1">Co-President &amp;
+                                Scientific Research Lead</p>
+                        </div>
+                        <div
+                            class="bg-background-light dark:bg-background-dark p-8 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
+                            <div class="h-full flex flex-col justify-between">
+                                <span
+                                    class="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase mb-4 block">///
+                                    Tech</span>
+                                <div>
+                                    <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Fadi
+                                        Yousef</h3>
+                                    <p class="font-mono text-sm text-primary dark:text-secondary mt-1">Technical Head
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-background-light dark:bg-background-dark p-8 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
+                            <div class="h-full flex flex-col justify-between">
+                                <span
+                                    class="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase mb-4 block">///
+                                    Docs</span>
+                                <div>
+                                    <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Jana
+                                        Ellouzy</h3>
+                                    <p class="font-mono text-sm text-primary dark:text-secondary mt-1">Documentation
+                                        Lead</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-background-light dark:bg-background-dark p-8 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
+                            <div class="h-full flex flex-col justify-between">
+                                <span
+                                    class="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase mb-4 block">///
+                                    Relations</span>
+                                <div>
+                                    <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Ahmed
+                                        Ashraf</h3>
+                                    <p class="font-mono text-sm text-primary dark:text-secondary mt-1">PR Lead</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-background-light dark:bg-background-dark p-8 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
+                            <div class="h-full flex flex-col justify-between">
+                                <span
+                                    class="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase mb-4 block">///
+                                    People</span>
+                                <div>
+                                    <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Lotfy
+                                        Abdallah</h3>
+                                    <p class="font-mono text-sm text-primary dark:text-secondary mt-1">HR Lead</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-background-light dark:bg-background-dark p-8 md:col-span-2 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
+                            <span class="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase mb-4 block">///
+                                Logistics</span>
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                                <p
+                                    class="font-mono text-sm text-primary dark:text-secondary uppercase tracking-wider w-32 shrink-0">
+                                    Events &amp;<br />Operations</p>
+                                <div class="flex flex-col sm:flex-row gap-6 sm:gap-12">
+                                    <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Kamal
+                                    </h3>
+                                    <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">
+                                        Basmala</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-background-light dark:bg-background-dark p-8 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
+                            <div class="h-full flex flex-col justify-between">
+                                <span
+                                    class="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase mb-4 block">///
+                                    Media</span>
+                                <div>
+                                    <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">
+                                        Mohammed Salek</h3>
+                                    <p class="font-mono text-sm text-primary dark:text-secondary mt-1">Media Lead</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-background-light dark:bg-background-dark p-8 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
+                            <div class="h-full flex flex-col justify-between">
+                                <span
+                                    class="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase mb-4 block">///
+                                    Finance</span>
+                                <div>
+                                    <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Malak
+                                        Ashraf</h3>
+                                    <p class="font-mono text-sm text-primary dark:text-secondary mt-1">Finance Lead</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-4 flex justify-between items-center text-[10px] font-mono text-slate-400 dark:text-slate-600 uppercase tracking-widest">
+                        <span>Sys.Ver.2.4</span>
+                        <span>AISU.org</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-12">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="w-2 h-2 bg-primary"></span>
+                    <span class="font-display font-bold text-lg text-slate-900 dark:text-white">AISU</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 max-w-sm">
+                    Advancing Egypt’s technology ecosystem through open-source innovation and student-led research.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-mono text-xs font-semibold text-slate-900 dark:text-white uppercase mb-4">Coordinates
+                </h4>
+                <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+                    <li>Cairo, Egypt</li>
+                    <li>contact@aisu.org</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-mono text-xs font-semibold text-slate-900 dark:text-white uppercase mb-4">Social</h4>
+                <div class="flex gap-4">
+                    <a class="text-slate-400 hover:text-primary dark:hover:text-white transition-colors"
+                        href="#">LinkedIn</a>
+                    <a class="text-slate-400 hover:text-primary dark:hover:text-white transition-colors"
+                        href="#">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

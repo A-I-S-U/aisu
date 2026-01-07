@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AISU - Data Analysis</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['Roboto Mono', 'monospace'] }, colors: { primary: '#111827', accent: '#3b82f6' } }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans text-gray-900 antialiased bg-gray-50">
+
+    <header class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="../index.html" class="font-bold text-gray-900 flex items-center gap-2">
+                <div class="h-8 w-8 rounded overflow-hidden"><img src="../assets/logo.jpg"
+                        class="w-full h-full object-cover"></div> AISU
+            </a>
+            <nav class="hidden md:flex gap-6 text-sm font-medium text-gray-500">
+                <a href="../index.html" class="hover:text-accent">Home</a>
+                <a href="../tracks.html" class="text-accent">Tracks</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="mb-8">
+            <span class="bg-green-100 text-green-800 text-xs font-mono px-2 py-1 rounded">TRK-02</span>
+            <h1 class="text-4xl font-bold mt-2">Data Analysis</h1>
+        </div>
+
+        <div class="prose prose-blue max-w-none">
+            <p class="text-xl text-gray-600 leading-relaxed">
+                Master the art of transforming raw data into meaningful insights. Learn the tools and techniques used by
+                data analysts to drive decision-making in top tech companies.
+            </p>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4">Curriculum Highlights</h3>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none pl-0">
+                <li class="bg-white p-4 rounded shadow-sm border border-gray-100"><strong>Python &
+                        SQL</strong><br>Pandas, NumPy, and complex queries.</li>
+                <li class="bg-white p-4 rounded shadow-sm border border-gray-100"><strong>Data
+                        Visualization</strong><br>Matplotlib, Seaborn, Tableau/PowerBI.</li>
+                <li class="bg-white p-4 rounded shadow-sm border border-gray-100"><strong>Statistical
+                        Analysis</strong><br>Hypothesis testing, distributions, A/B testing.</li>
+                <li class="bg-white p-4 rounded shadow-sm border border-gray-100"><strong>Data
+                        Cleaning</strong><br>Handling missing values, preprocessing pipelines.</li>
+            </ul>
+        </div>
+    </main>
+    <footer class="text-center py-8 text-sm text-gray-400">© 2023 AISU Community</footer>
+</body>
+
+</html>

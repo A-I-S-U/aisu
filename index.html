@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AISU - AI Student Universe</title>
+    <!-- Load Tailwind CSS v3 with plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Configuration for Custom Colors and Fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aisu-blue': '#1e4b85',
+                        'aisu-dark-blue': '#124e78', // Slightly deeper for footer
+                        'aisu-yellow': '#eebf53',
+                        'aisu-bg': '#f8f9fa',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS for specific patterns and utilities -->
+    <style data-purpose="custom-utilities">
+        /* Subtle grid pattern for the Hero section */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        }
+
+        /* Utility for progress bar animations */
+        .progress-bar {
+            transition: width 1s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-aisu-bg text-gray-800 font-sans antialiased">
+    <!-- BEGIN: Header -->
+    <header class="w-full bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Logo Placeholder -->
+            <div class="flex items-center gap-2 cursor-pointer" id="logo-placeholder"
+                onclick="window.location.href='index.html'">
+                <div class="w-10 h-10 rounded flex items-center justify-center overflow-hidden">
+                    <img src="assets/logo.jpg" alt="AISU Logo" class="w-full h-full object-cover">
+                </div>
+                <span class="font-bold tracking-tight text-lg text-aisu-blue">AISU<span
+                        class="text-aisu-yellow">_HUE</span></span>
+            </div>
+            <!-- Navigation -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-500">
+                <a class="text-aisu-blue font-bold transition-colors" href="index.html">Home</a>
+                <a class="hover:text-aisu-blue transition-colors" href="team.html">About</a>
+                <a class="hover:text-aisu-blue transition-colors" href="tracks.html">Tracks</a>
+                <a class="text-gray-900 hover:text-aisu-blue transition-colors" href="#">Join Us</a>
+            </nav>
+            <!-- Mobile Menu Button (Visible on small screens) -->
+            <button class="md:hidden text-gray-500"
+                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-b border-gray-100 p-4 absolute w-full top-16 left-0 z-40 shadow-lg">
+            <a class="block py-2 px-4 text-aisu-blue font-bold bg-gray-50 rounded" href="index.html">Home</a>
+            <a class="block py-2 px-4 hover:bg-gray-50 rounded text-gray-600" href="team.html">About</a>
+            <a class="block py-2 px-4 hover:bg-gray-50 rounded text-gray-600" href="tracks.html">Tracks</a>
+            <a class="block py-2 px-4 hover:bg-gray-50 rounded text-gray-600" href="#">Join Us</a>
+        </div>
+    </header>
+    <!-- END: Header -->
+    <!-- BEGIN: Hero Section -->
+    <section class="relative pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
+        <!-- Grid Background Layer -->
+        <div class="absolute inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <!-- Left Column: Content -->
+            <div class="space-y-6">
+                <!-- Badge -->
+                <div
+                    class="inline-flex items-center gap-2 bg-blue-100 text-aisu-blue text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-aisu-blue"></span>
+                    v2.0.4 System Status: Active
+                </div>
+                <!-- Headline -->
+                <h1 class="text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-gray-900">
+                    Building the <br />
+                    <span class="text-aisu-blue font-bold">operating system</span> <br />
+                    for Egypt's <br />
+                    future innovators.
+                </h1>
+                <!-- Subtext -->
+                <p class="text-lg text-gray-600 max-w-lg leading-relaxed">
+                    AI Student Universe isn't just a club, It's an open-source engine designed to bridge the gap between
+                    academic theory and real-world impact through collaborative technology.
+                </p>
+            </div>
+            <!-- Right Column: Parameters Card -->
+            <div class="relative">
+                <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-8 w-full max-w-md ml-auto">
+                    <!-- Card Header -->
+                    <div
+                        class="flex justify-between items-center mb-8 text-xs font-mono text-gray-400 uppercase tracking-widest border-b border-gray-100 pb-4">
+                        <span>// KEY_PARAMETERS</span>
+                        <span>EXEC_MODE: OPEN</span>
+                    </div>
+                    <!-- Progress Bars -->
+                    <div class="space-y-6">
+                        <!-- Item 1 -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm font-semibold text-gray-700">
+                                <span>Technical Depth</span>
+                            </div>
+                            <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-aisu-blue w-[85%] rounded-full"></div>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm font-semibold text-gray-700">
+                                <span>Cross-Discipline</span>
+                            </div>
+                            <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-aisu-yellow w-[70%] rounded-full"></div>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm font-semibold text-gray-700">
+                                <span>Open Source</span>
+                            </div>
+                            <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-gray-900 w-[95%] rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END: Hero Section -->
+    <!-- BEGIN: Section 1 - Architecture -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="mb-12">
+                <span class="text-aisu-yellow font-bold text-xs uppercase tracking-widest mb-2 block">01 /
+                    Architecture</span>
+                <h2 class="text-3xl font-bold text-gray-900">The AISU Framework</h2>
+            </div>
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 border border-gray-100 shadow-sm rounded-xl hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6"
+                        id="icon-1"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M16 16l4-4-4-4M8 8l-4 4 4 4" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"></path>
+                        </svg></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Radically Open Source</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">
+                        Knowledge is not proprietary. Every project, codebase, and research paper we produce is public
+                        by default. We build in public to accelerate learning for everyone, not just our members.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="p-8 border border-gray-100 shadow-sm rounded-xl hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 bg-yellow-50 text-yellow-600 rounded-lg flex items-center justify-center mb-6"
+                        id="icon-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path
+                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"></path>
+                        </svg></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Applied, Not Abstract</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">
+                        Theory is the foundation; application is the structure. We focus on shipping tangible AI
+                        products and tools that solve actual problems within our ecosystem and beyond.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="p-8 border border-gray-100 shadow-sm rounded-xl hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center mb-6"
+                        id="icon-3"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path
+                                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Ecosystem Advancement</h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">
+                        Our ultimate KPI is the growth of Egypt's tech capability. We are creating a talent pipeline
+                        that is technically robust and globally competitive from day one.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END: Section 1 -->
+    <!-- BEGIN: Section 2 - Cross-Discipline Intelligence -->
+    <section class="py-20 bg-aisu-bg">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <!-- Left Column: Description -->
+            <div class="flex flex-col justify-center">
+                <span class="text-aisu-yellow font-bold text-xs uppercase tracking-widest mb-2 block">02 /
+                    Composition</span>
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Cross-Discipline<br />Intelligence</h2>
+                <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                    Innovation happens at the intersection. AISU is built on the belief that technical prowess needs
+                    creative direction, and creative vision needs technical execution.
+                </p>
+                <a class="inline-flex items-center font-bold text-aisu-blue hover:text-blue-800 transition-colors group"
+                    href="team.html">
+                    Explore our Committees
+                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none"
+                        stroke="currentColor" viewbox="0 0 24 24">
+                        <path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"></path>
+                    </svg>
+                </a>
+            </div>
+            <!-- Right Column: Stacked Cards -->
+            <div class="space-y-6">
+                <!-- Card 1: Technical -->
+                <div class="bg-white p-8 rounded-r-xl border-aisu-blue shadow-sm flex items-start gap-6 border-l-[5px]">
+                    <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-aisu-blue"
+                        id="icon-tech"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path
+                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg></div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Technical Core</h3>
+                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+                            Machine Learning Engineers, Data Scientists, and Full Stack Developers working on
+                            open-source libraries, datasets, and AI models tailored for the MENA region.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-2 py-1 bg-gray-100 text-xs font-semibold text-gray-600 rounded">Python</span>
+                            <span
+                                class="px-2 py-1 bg-gray-100 text-xs font-semibold text-gray-600 rounded">TensorFlow</span>
+                            <span class="px-2 py-1 bg-gray-100 text-xs font-semibold text-gray-600 rounded">Rust</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2: Creative -->
+                <div
+                    class="bg-white p-8 rounded-r-xl border-aisu-yellow shadow-sm flex items-start gap-6 border-l-[5px]">
+                    <div class="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600"
+                        id="icon-creative"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path
+                                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                        </svg></div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Creative &amp; Non-Technical</h3>
+                        <p class="text-gray-500 text-sm mb-4 leading-relaxed">
+                            Designers, Technical Writers, and Product Managers who translate complex code into usable
+                            products and understandable narratives. We treat documentation and UX as first-class
+                            citizens.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-gray-100 text-xs font-semibold text-gray-600 rounded">UI/UX</span>
+                            <span
+                                class="px-2 py-1 bg-gray-100 text-xs font-semibold text-gray-600 rounded">DevRel</span>
+                            <span class="px-2 py-1 bg-gray-100 text-xs font-semibold text-gray-600 rounded">Product
+                                Mgmt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END: Section 2 -->
+    <!-- BEGIN: CTA Footer -->
+    <footer class="bg-aisu-dark-blue text-white py-24 text-center">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4">Ready to commit to the future?</h2>
+            <p class="text-blue-100 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+                Join a community where your contributions are measured in lines of code, impact, and growth. Open to all
+                students in Egypt.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button
+                    class="w-full sm:w-auto px-8 py-3 bg-aisu-yellow text-gray-900 font-bold rounded hover:bg-yellow-400 transition-colors shadow-lg shadow-yellow-500/20">
+                    Apply for Membership
+                </button>
+                <button
+                    class="w-full sm:w-auto px-8 py-3 bg-transparent border border-aisu-yellow text-white font-bold rounded hover:bg-white/5 transition-colors border-l-[5px]">
+                    View GitHub
+                </button>
+            </div>
+        </div>
+    </footer>
+    <!-- END: CTA Footer -->
+    <!-- BEGIN: Bottom Bar -->
+    <div class="bg-white border-t border-gray-100 py-8">
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-gray-400 uppercase">
+            <div class="flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"></path>
+                    <path
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+                <span>© 2023 AISU Community. Open Source.</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <!-- GitHub Icon -->
+                <a class="hover:text-gray-600 transition-colors" href="#">
+                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                        <path clip-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                            fill-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <!-- Twitter Icon -->
+                <a class="hover:text-gray-600 transition-colors" href="#">
+                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                        </path>
+                    </svg>
+                </a>
+                <!-- LinkedIn Icon -->
+                <a class="hover:text-gray-600 transition-colors" href="#">
+                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                        <path clip-rule="evenodd"
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                            fill-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- END: Bottom Bar -->
+</body>
+
+</html>
