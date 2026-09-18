@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>AISU - Tracks & Sectors</title>
+    <title>EVOLVE - Tracks & Sectors</title>
     <!-- Load Tailwind CSS v3 -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <!-- Load Fonts -->
@@ -22,9 +22,10 @@
                         mono: ['Roboto Mono', 'monospace'],
                     },
                     colors: {
-                        primary: '#111827', // Almost black
-                        accent: '#3b82f6', // Medium blue
-                        'accent-dark': '#1e40af',
+                        primary: '#003B6F', // Deep Navy Blue from logo
+                        accent: '#E94E34', // Red from logo
+                        'accent-dark': '#b8331f',
+                        'secondary': '#F9A61A', // Gold/Orange from logo
                         'bg-card': '#ffffff',
                         'border-light': '#e5e7eb',
                     }
@@ -61,10 +62,10 @@
         <!-- Logo Section -->
         <div class="flex items-center gap-3 cursor-pointer" onclick="window.location.href='index.html'">
             <div class="h-10 w-10 flex items-center justify-center overflow-hidden rounded">
-                <img src="assets/logo.jpg" alt="AISU Logo" class="w-full h-full object-cover">
+                <img src="assets/logo.jpg" alt="EVOLVE Logo" class="w-full h-full object-cover">
             </div>
-            <span class="text-xl font-bold tracking-tight text-gray-600">AISU <span
-                    class="text-gray-400 font-normal">COMMUNITY</span></span>
+            <span class="text-xl font-bold tracking-tight text-gray-600">EVOLVE <span
+                    class="text-gray-400 font-normal">AISU HUE</span></span>
         </div>
         <!-- Navigation Links -->
         <nav class="hidden md:flex items-center gap-8">
@@ -72,7 +73,8 @@
             <a class="font-mono text-sm text-gray-500 hover:text-accent transition-colors" href="team.html">/team</a>
             <a class="font-mono text-sm text-gray-900 font-semibold border-b-2 border-transparent hover:border-accent transition-all"
                 href="tracks.html">/tracks</a>
-            <a class="font-mono text-sm text-gray-500 hover:text-accent transition-colors" href="#">/join</a>
+            <a class="font-mono text-sm text-gray-500 hover:text-accent transition-colors"
+                href="https://chat.whatsapp.com/BqktAXW5zgv1pUH0UgRROd" target="_blank" rel="noopener">/join</a>
         </nav>
         <!-- Mobile Menu Button -->
         <button class="md:hidden text-gray-500"
@@ -89,7 +91,8 @@
         <a class="block py-2 px-4 hover:bg-gray-50 rounded font-mono text-sm" href="team.html">/team</a>
         <a class="block py-2 px-4 text-accent font-bold bg-gray-50 rounded font-mono text-sm"
             href="tracks.html">/tracks</a>
-        <a class="block py-2 px-4 hover:bg-gray-50 rounded font-mono text-sm" href="#">/join</a>
+        <a class="block py-2 px-4 hover:bg-gray-50 rounded font-mono text-sm"
+            href="https://chat.whatsapp.com/BqktAXW5zgv1pUH0UgRROd" target="_blank" rel="noopener">/join</a>
     </div>
     <!-- END: MainHeader -->
 
@@ -97,16 +100,16 @@
     <section class="px-6 md:px-12 pt-16 pb-16 max-w-7xl mx-auto relative z-10">
         <!-- Version Tag -->
         <div class="inline-flex items-center bg-blue-50 border border-blue-100 rounded-full px-3 py-1 mb-6">
-            <span class="h-2 w-2 rounded-full bg-yellow-400 mr-2"></span>
-            <span class="font-mono text-xs text-blue-600 font-medium tracking-wide">SYSTEM_OVERVIEW v2.0</span>
+            <span class="h-2 w-2 rounded-full bg-secondary mr-2"></span>
+            <span class="font-mono text-xs text-primary font-medium tracking-wide">SYSTEM_OVERVIEW v2.0</span>
         </div>
         <!-- Main Title -->
         <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-            Tracks &amp; <span class="text-blue-600">Sectors</span>
+            Tracks &amp; <span class="text-primary">Sectors</span>
         </h1>
         <!-- Description -->
         <p class="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
-            Discover your role in the AI Student Universe. Whether you build the future with code or shape it through
+            Discover your role in EVOLVE. Whether you build the future with code or shape it through
             operations, every unit is critical to our ecosystem.
         </p>
     </section>
@@ -342,11 +345,12 @@
     <footer class="border-t mt-auto bg-white border-gray-100">
         <div class="max-w-7xl mx-auto px-6 md:px-12 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center md:items-baseline">
-                <span class="font-bold text-gray-900">AISU</span>
-                <span class="text-sm text-gray-500">AI Student Universe © 2023</span>
+                <span class="font-bold text-gray-900">EVOLVE</span>
+                <span class="text-sm text-gray-500">AISU HUE Community © 2026</span>
             </div>
             <div>
-                <a class="text-gray-400 hover:text-gray-600 transition-colors" href="#">
+                <a class="text-gray-400 hover:text-gray-600 transition-colors" href="https://github.com/A-I-S-U"
+                    target="_blank" rel="noopener">
                     <svg class="h-6 w-6 opacity-60 hover:opacity-100" fill="currentColor" viewbox="0 0 24 24">
                         <path
                             d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
