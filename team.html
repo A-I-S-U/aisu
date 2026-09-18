@@ -17,9 +17,9 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#003B6F", // Deep Navy Blue from logo
-                        secondary: "#F9A61A", // Yellow/Orange from logo
-                        accent: "#E94E34", // Red from logo
+                        primary: "#0D1B2A", // Deep Navy Blue from logo
+                        secondary: "#F5A623", // Yellow/Orange from logo
+                        accent: "#E74C3C", // Red from logo
                         "background-light": "#F3F4F6", // Cool gray/white
                         "background-dark": "#0B1120", // Deep slate/black
                         "surface-light": "#FFFFFF",
@@ -73,8 +73,9 @@
         class="w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-4 cursor-pointer" onclick="window.location.href='index.html'">
-                <div class="h-12 w-12 overflow-hidden flex items-center justify-center">
-                    <img src="assets/logo.jpg" alt="EVOLVE Logo" class="w-full h-full object-cover">
+                <div
+                    class="h-12 w-12 rounded-full overflow-hidden flex items-center justify-center bg-white border border-slate-200 shadow-sm p-1.5">
+                    <img src="assets/logo-icon.jpg" alt="EVOLVE Logo" class="w-full h-full object-contain">
                 </div>
                 <div class="hidden sm:block">
                     <h1 class="font-display font-bold text-xl tracking-tight leading-none text-primary dark:text-white">
@@ -87,7 +88,7 @@
                 <a class="hover:text-primary dark:hover:text-secondary transition-colors" href="index.html">Home</a>
                 <a class="text-primary dark:text-secondary font-bold" href="team.html">Team</a>
                 <a class="hover:text-primary dark:hover:text-secondary transition-colors" href="tracks.html">Tracks</a>
-                <a class="hover:text-primary dark:hover:text-secondary transition-colors" href="https://chat.whatsapp.com/BqktAXW5zgv1pUH0UgRROd" target="_blank" rel="noopener">Join</a>
+                <a class="hover:text-primary dark:hover:text-secondary transition-colors" href="https://forms.gle/Sh9GVM1qyrJsX6cZ8" target="_blank" rel="noopener">Join</a>
             </nav>
             <button class="md:hidden text-slate-800 dark:text-white"
                 onclick="document.getElementById('mobile-menu-team').classList.toggle('hidden')">
@@ -107,7 +108,7 @@
             <a class="block py-2 px-4 hover:bg-slate-200 dark:hover:bg-slate-800 rounded font-mono uppercase text-sm"
                 href="tracks.html">Tracks</a>
             <a class="block py-2 px-4 hover:bg-slate-200 dark:hover:bg-slate-800 rounded font-mono uppercase text-sm"
-                href="https://chat.whatsapp.com/BqktAXW5zgv1pUH0UgRROd" target="_blank" rel="noopener">Join</a>
+                href="https://forms.gle/Sh9GVM1qyrJsX6cZ8" target="_blank" rel="noopener">Join</a>
         </div>
     </header>
     <main class="flex-grow tech-grid relative">
