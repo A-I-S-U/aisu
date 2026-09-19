@@ -1,52 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>EVOLVE - Media</title>
-    <meta name="description" content="The creative lens. EVOLVE's Media sector shapes the community's visual identity through photography, videography, and design." />
+    <meta name="description" content="The creative lens. Media shapes EVOLVE's visual identity through photography, videography, and graphic design." />
     <link rel="canonical" href="https://a-i-s-u.me/sectors/media.html" />
     <link rel="icon" type="image/jpeg" href="../assets/logo-icon.jpg" />
     <meta property="og:title" content="EVOLVE - Media" />
-    <meta property="og:description" content="The creative lens. EVOLVE's Media sector shapes the community's visual identity through photography, videography, and design." />
+    <meta property="og:description" content="The creative lens. Media shapes EVOLVE's visual identity through photography, videography, and graphic design." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://a-i-s-u.me/sectors/media.html" />
     <meta property="og:image" content="https://a-i-s-u.me/assets/logo-icon.jpg" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="EVOLVE - Media" />
-    <meta name="twitter:description" content="The creative lens. EVOLVE's Media sector shapes the community's visual identity through photography, videography, and design." />
+    <meta name="twitter:description" content="The creative lens. Media shapes EVOLVE's visual identity through photography, videography, and graphic design." />
     <meta name="twitter:image" content="https://a-i-s-u.me/assets/logo-icon.jpg" />
+    <script>
+        (function () { try { var l = localStorage.getItem('evolve_lang') || 'en'; document.documentElement.lang = l; document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr'; } catch (e) { } })();
+    </script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Roboto+Mono:wght@400;500&amp;family=Cairo:wght@400;500;600;700&amp;display=swap"
         rel="stylesheet" />
     <script>
-        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['Roboto Mono', 'monospace'] }, colors: { primary: '#0D1B2A', accent: '#E74C3C', secondary: '#F5A623' } } } }
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['Roboto Mono', 'monospace'], arabic: ['Cairo', 'sans-serif'] }, colors: { primary: '#0D1B2A', accent: '#E74C3C', secondary: '#F5A623', 'aisu-bg': '#F7F7F7' } } } }
     </script>
+    <style>
+        html[dir="rtl"] body { font-family: 'Cairo', 'Inter', sans-serif; }
+        .sr-only-focusable:not(:focus) { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    </style>
 </head>
 
-<body class="font-sans text-gray-900 antialiased bg-gray-50">
-    <header class="bg-white border-b border-gray-200">
+<body data-page="media" class="font-sans text-gray-900 antialiased bg-aisu-bg">
+    <a href="#main"
+        class="sr-only-focusable focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-secondary focus:text-primary focus:px-4 focus:py-2 focus:rounded focus:font-bold"
+        data-i18n="skip_link">Skip to content</a>
+    <header class="w-full bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="../index.html" class="font-bold text-gray-900 flex items-center gap-2">
-                <div class="h-9 w-9 rounded-full overflow-hidden bg-white border border-gray-200 shadow-sm p-1"><img src="../assets/logo-icon.jpg"
-                        class="w-full h-full object-contain"></div> EVOLVE
+            <a href="../index.html" class="flex items-center gap-2">
+                <div
+                    class="w-11 h-11 rounded-full flex items-center justify-center overflow-hidden bg-white border border-gray-200 shadow-sm p-1">
+                    <img src="../assets/logo-icon.jpg" alt="EVOLVE Logo" class="w-full h-full object-contain">
+                </div>
+                <div class="leading-none">
+                    <span class="block font-bold tracking-tight text-lg text-primary">EVOLVE<span
+                            class="text-secondary">.</span></span>
+                    <span class="block text-[10px] font-semibold tracking-widest text-gray-500 uppercase"
+                        data-i18n="subtitle">AISU HUE Community</span>
+                </div>
             </a>
-            <nav class="hidden md:flex gap-6 text-sm font-medium text-gray-500"><a href="../index.html"
-                    class="hover:text-accent">Home</a><a href="../tracks.html" class="text-accent">Tracks</a></nav>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+                <a class="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded transition-colors"
+                    href="../index.html" data-i18n="nav_home">Home</a>
+                <a class="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded transition-colors"
+                    href="../team.html" data-i18n="nav_team">Team</a>
+                <a class="text-primary font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    href="../tracks.html" data-i18n="nav_committees">Committees</a>
+                <a class="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded transition-colors"
+                    href="https://forms.gle/Sh9GVM1qyrJsX6cZ8" target="_blank" rel="noopener"
+                    data-i18n="nav_join">Join</a>
+                <button id="lang-toggle" type="button"
+                    class="px-3 py-1.5 rounded-full border border-gray-200 text-xs font-bold text-gray-600 hover:border-secondary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
+                    aria-label="Toggle language"><span id="lang-toggle-label">العربية</span></button>
+            </nav>
+            <div class="flex items-center gap-2 md:hidden">
+                <button id="lang-toggle-mobile" type="button"
+                    class="px-2.5 py-1 rounded-full border border-gray-200 text-xs font-bold text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary">
+                    <span id="lang-toggle-label-mobile">AR</span></button>
+                <button class="text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-b border-gray-100 p-4 absolute w-full top-16 left-0 z-40 shadow-lg">
+            <a class="block py-2 px-4 rounded font-medium text-gray-700 hover:bg-gray-50" href="../index.html"
+                data-i18n="nav_home">Home</a>
+            <a class="block py-2 px-4 rounded font-medium text-gray-700 hover:bg-gray-50" href="../team.html"
+                data-i18n="nav_team">Team</a>
+            <a class="block py-2 px-4 rounded font-medium text-primary bg-gray-50" href="../tracks.html"
+                data-i18n="nav_committees">Committees</a>
+            <a class="block py-2 px-4 rounded font-medium text-gray-700 hover:bg-gray-50"
+                href="https://forms.gle/Sh9GVM1qyrJsX6cZ8" target="_blank" rel="noopener"
+                data-i18n="nav_join">Join</a>
         </div>
     </header>
-    <main class="max-w-4xl mx-auto px-6 py-12">
-        <div class="mb-8"><span class="bg-red-100 text-red-800 text-xs font-mono px-2 py-1 rounded">SEC-04</span>
-            <h1 class="text-4xl font-bold mt-2">Media</h1>
+    <nav aria-label="Breadcrumb" class="max-w-4xl mx-auto px-6 pt-6 text-sm text-gray-500 flex items-center gap-2">
+        <a href="../index.html" class="hover:text-primary" data-i18n="nav_home">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="../tracks.html" class="hover:text-primary" data-i18n="nav_committees">Committees</a>
+        <span aria-hidden="true">/</span>
+        <span class="text-gray-700 font-medium" data-i18n="media_name">Media</span>
+    </nav>
+
+    <main id="main" class="max-w-4xl mx-auto px-6 py-10">
+        <div class="mb-8">
+            <span class="bg-red-100 text-red-800 text-xs font-mono px-2 py-1 rounded">SEC-04</span>
+            <h1 class="text-4xl font-bold mt-2" data-i18n="media_name">Media</h1>
         </div>
-        <div class="prose prose-red max-w-none">
-            <p class="text-xl text-gray-600 leading-relaxed">The creative lens. Media creates the visual identity of
-                EVOLVE through photography, videography, and graphic design.</p>
-        </div>
+        <p class="text-xl text-gray-600 leading-relaxed mb-10" data-i18n="media_lead">The creative lens. Media shapes EVOLVE's visual identity through photography, videography, and graphic design.</p>
+        <h3 class="text-2xl font-bold mb-4" data-i18n="focus_areas_label">Focus Areas</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none pl-0">
+            <li class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <strong data-i18n="media_fa1_t">Photography</strong><br><span data-i18n="media_fa1_d">Capturing events and community moments.</span>
+            </li>
+            <li class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <strong data-i18n="media_fa2_t">Videography</strong><br><span data-i18n="media_fa2_d">Recap videos and highlight reels.</span>
+            </li>
+            <li class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <strong data-i18n="media_fa3_t">Graphic Design</strong><br><span data-i18n="media_fa3_d">Posters, banners, and visual identity.</span>
+            </li>
+            <li class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                <strong data-i18n="media_fa4_t">Social Media Visuals</strong><br><span data-i18n="media_fa4_d">Content built for Instagram and TikTok.</span>
+            </li>
+        </ul>
     </main>
-    <footer class="text-center py-8 text-sm text-gray-400">© 2026 EVOLVE Community</footer>
+
+    <footer class="bg-primary text-white py-20 text-center mt-20">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4" data-i18n="footer_cta_title">Ready to commit to the future?</h2>
+            <p class="text-gray-300 text-lg mb-8 max-w-xl mx-auto leading-relaxed" data-i18n="footer_cta_desc">Join a
+                community where your contributions are measured in lines of code, impact, and growth.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://forms.gle/Sh9GVM1qyrJsX6cZ8" target="_blank" rel="noopener"
+                    class="w-full sm:w-auto px-8 py-3 bg-secondary text-gray-900 font-bold rounded hover:bg-yellow-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                    data-i18n="footer_cta_apply">Apply for Membership</a>
+                <a href="https://github.com/A-I-S-U" target="_blank" rel="noopener"
+                    class="w-full sm:w-auto px-8 py-3 bg-transparent border border-secondary text-white font-bold rounded hover:bg-white/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                    data-i18n="footer_cta_github">View GitHub</a>
+            </div>
+        </div>
+    </footer>
+    <div class="bg-white border-t border-gray-100 py-6">
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-gray-400 uppercase">
+            <span data-i18n="footer_copyright">© 2026 EVOLVE Community. Open Source.</span>
+            <div class="flex items-center gap-4">
+                <a class="hover:text-gray-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    href="https://github.com/A-I-S-U" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                        <path clip-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                            fill-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a class="hover:text-gray-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    href="https://www.instagram.com/evolve_hue" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                        </path>
+                    </svg>
+                </a>
+                <a class="hover:text-gray-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    href="https://chat.whatsapp.com/BqktAXW5zgv1pUH0UgRROd" target="_blank" rel="noopener"
+                    aria-label="WhatsApp">
+                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M12.04 2c-5.523 0-10 4.477-10 10 0 1.766.462 3.492 1.34 5.012L2 22l5.128-1.345A9.96 9.96 0 0012.04 22c5.523 0 10-4.477 10-10s-4.477-10-10-10zm0 18.166a8.14 8.14 0 01-4.152-1.135l-.298-.177-3.043.798.812-2.968-.194-.305a8.128 8.128 0 01-1.243-4.35c0-4.49 3.653-8.143 8.144-8.143 2.175 0 4.219.847 5.757 2.386a8.086 8.086 0 012.386 5.757c0 4.49-3.653 8.143-8.169 8.143zm4.463-6.097c-.245-.123-1.45-.716-1.674-.798-.224-.082-.387-.123-.55.123-.163.245-.632.798-.775.961-.143.163-.286.184-.53.061-.245-.123-1.033-.381-1.968-1.213-.727-.648-1.218-1.45-1.36-1.694-.143-.245-.015-.377.108-.499.11-.11.245-.286.367-.429.123-.143.163-.245.245-.408.082-.163.041-.306-.02-.428-.061-.123-.55-1.326-.754-1.816-.198-.477-.4-.412-.55-.42-.143-.007-.306-.009-.47-.009a.9.9 0 00-.653.306c-.224.245-.857.837-.857 2.04 0 1.204.877 2.367 1 2.53.122.163 1.727 2.636 4.183 3.696.585.253 1.04.404 1.396.517.586.187 1.12.16 1.542.097.47-.07 1.45-.593 1.654-1.165.204-.572.204-1.062.143-1.165-.061-.102-.224-.163-.47-.286z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/i18n.js"></script>
 </body>
 
 </html>

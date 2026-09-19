@@ -4,27 +4,19 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url><loc>https://a-i-s-u.me/</loc></url>
   <url><loc>https://a-i-s-u.me/team.html</loc></url>
   <url><loc>https://a-i-s-u.me/tracks.html</loc></url>
 
-  <url><loc>https://a-i-s-u.me/sectors/documentation.html</loc></url>
-  <url><loc>https://a-i-s-u.me/sectors/events_ops.html</loc></url>
-  <url><loc>https://a-i-s-u.me/sectors/finance.html</loc></url>
   <url><loc>https://a-i-s-u.me/sectors/human_resources.html</loc></url>
-  <url><loc>https://a-i-s-u.me/sectors/media.html</loc></url>
   <url><loc>https://a-i-s-u.me/sectors/public_relations.html</loc></url>
+  <url><loc>https://a-i-s-u.me/sectors/events_ops.html</loc></url>
+  <url><loc>https://a-i-s-u.me/sectors/media.html</loc></url>
+  <url><loc>https://a-i-s-u.me/sectors/content_creation.html</loc></url>
 
   <url><loc>https://a-i-s-u.me/tracks/ai.html</loc></url>
   <url><loc>https://a-i-s-u.me/tracks/cyber_security.html</loc></url>
-  <url><loc>https://a-i-s-u.me/tracks/data_analysis.html</loc></url>
-  <url><loc>https://a-i-s-u.me/tracks/flutter.html</loc></url>
-  <url><loc>https://a-i-s-u.me/tracks/robotics.html</loc></url>
-  <url><loc>https://a-i-s-u.me/tracks/web_development.html</loc></url>
-
-
+  <url><loc>https://a-i-s-u.me/tracks/technology_software.html</loc></url>
 
 </urlset>

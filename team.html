@@ -1,282 +1,251 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>EVOLVE - Team</title>
-    <meta name="description" content="Meet the team behind EVOLVE, the AISU HUE student tech community at Horus University of Egypt." />
+    <meta name="description"
+        content="Meet the team behind EVOLVE, the AISU HUE student tech community at Horus University of Egypt." />
     <link rel="canonical" href="https://a-i-s-u.me/team.html" />
     <link rel="icon" type="image/jpeg" href="assets/logo-icon.jpg" />
     <meta property="og:title" content="EVOLVE - Team" />
-    <meta property="og:description" content="Meet the team behind EVOLVE, the AISU HUE student tech community at Horus University of Egypt." />
+    <meta property="og:description"
+        content="Meet the team behind EVOLVE, the AISU HUE student tech community at Horus University of Egypt." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://a-i-s-u.me/team.html" />
     <meta property="og:image" content="https://a-i-s-u.me/assets/logo-icon.jpg" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="EVOLVE - Team" />
-    <meta name="twitter:description" content="Meet the team behind EVOLVE, the AISU HUE student tech community at Horus University of Egypt." />
+    <meta name="twitter:description"
+        content="Meet the team behind EVOLVE, the AISU HUE student tech community at Horus University of Egypt." />
     <meta name="twitter:image" content="https://a-i-s-u.me/assets/logo-icon.jpg" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <script>
+        (function () { try { var l = localStorage.getItem('evolve_lang') || 'en'; document.documentElement.lang = l; document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr'; } catch (e) { } })();
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Roboto+Mono:wght@400;500&amp;family=Cairo:wght@400;500;600;700&amp;display=swap"
         rel="stylesheet" />
     <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#0D1B2A", // Deep Navy Blue from logo
-                        secondary: "#F5A623", // Yellow/Orange from logo
-                        accent: "#E74C3C", // Red from logo
-                        "background-light": "#F3F4F6", // Cool gray/white
-                        "background-dark": "#0B1120", // Deep slate/black
-                        "surface-light": "#FFFFFF",
-                        "surface-dark": "#151e32",
-                    },
-                    fontFamily: {
-                        sans: ["Inter", "sans-serif"],
-                        display: ["Space Grotesk", "sans-serif"],
-                        mono: ["JetBrains Mono", "monospace"],
-                    },
-                    borderRadius: {
-                        DEFAULT: "0px", // Technical/Austere feel often implies sharp edges or minimal radius
-                    },
-                },
-            },
-        };
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['Roboto Mono', 'monospace'], arabic: ['Cairo', 'sans-serif'] }, colors: { primary: '#0D1B2A', accent: '#E74C3C', secondary: '#F5A623', 'aisu-bg': '#F7F7F7' } } } }
     </script>
     <style>
-        ::-webkit-scrollbar {
-            width: 8px;
+        html[dir="rtl"] body {
+            font-family: 'Cairo', 'Inter', sans-serif;
         }
 
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: #cbd5e1;
-        }
-
-        .dark ::-webkit-scrollbar-thumb {
-            background-color: #334155;
+        .sr-only-focusable:not(:focus) {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
         .tech-grid {
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
             background-size: 40px 40px;
-        }
-
-        .dark .tech-grid {
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
         }
     </style>
 </head>
 
-<body
-    class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 transition-colors duration-300 min-h-screen flex flex-col font-sans">
-    <header
-        class="w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-4 cursor-pointer" onclick="window.location.href='index.html'">
+<body data-page="team" class="font-sans text-gray-900 antialiased bg-aisu-bg">
+    <a href="#main"
+        class="sr-only-focusable focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-secondary focus:text-primary focus:px-4 focus:py-2 focus:rounded focus:font-bold"
+        data-i18n="skip_link">Skip to content</a>
+    <header class="w-full bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
                 <div
-                    class="h-12 w-12 rounded-full overflow-hidden flex items-center justify-center bg-white border border-slate-200 shadow-sm p-1.5">
+                    class="w-11 h-11 rounded-full flex items-center justify-center overflow-hidden bg-white border border-gray-200 shadow-sm p-1">
                     <img src="assets/logo-icon.jpg" alt="EVOLVE Logo" class="w-full h-full object-contain">
                 </div>
-                <div class="hidden sm:block">
-                    <h1 class="font-display font-bold text-xl tracking-tight leading-none text-primary dark:text-white">
-                        EVOLVE</h1>
-                    <span
-                        class="text-xs font-mono text-slate-500 dark:text-slate-400 tracking-widest uppercase">AISU HUE Community</span>
+                <div class="leading-none">
+                    <span class="block font-bold tracking-tight text-lg text-primary">EVOLVE<span
+                            class="text-secondary">.</span></span>
+                    <span class="block text-[10px] font-semibold tracking-widest text-gray-500 uppercase"
+                        data-i18n="subtitle">AISU HUE Community</span>
                 </div>
-            </div>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-mono uppercase tracking-wider">
-                <a class="hover:text-primary dark:hover:text-secondary transition-colors" href="index.html">Home</a>
-                <a class="text-primary dark:text-secondary font-bold" href="team.html">Team</a>
-                <a class="hover:text-primary dark:hover:text-secondary transition-colors" href="tracks.html">Tracks</a>
-                <a class="hover:text-primary dark:hover:text-secondary transition-colors" href="https://forms.gle/Sh9GVM1qyrJsX6cZ8" target="_blank" rel="noopener">Join</a>
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+                <a class="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded transition-colors"
+                    href="index.html" data-i18n="nav_home">Home</a>
+                <a class="text-primary font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    href="team.html" data-i18n="nav_team">Team</a>
+                <a class="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded transition-colors"
+                    href="tracks.html" data-i18n="nav_committees">Committees</a>
+                <a class="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded transition-colors"
+                    href="https://forms.gle/Sh9GVM1qyrJsX6cZ8" target="_blank" rel="noopener"
+                    data-i18n="nav_join">Join</a>
+                <button id="lang-toggle" type="button"
+                    class="px-3 py-1.5 rounded-full border border-gray-200 text-xs font-bold text-gray-600 hover:border-secondary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
+                    aria-label="Toggle language"><span id="lang-toggle-label">العربية</span></button>
             </nav>
-            <button class="md:hidden text-slate-800 dark:text-white"
-                onclick="document.getElementById('mobile-menu-team').classList.toggle('hidden')">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2">
-                    </path>
-                </svg>
-            </button>
+            <div class="flex items-center gap-2 md:hidden">
+                <button id="lang-toggle-mobile" type="button"
+                    class="px-2.5 py-1 rounded-full border border-gray-200 text-xs font-bold text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary">
+                    <span id="lang-toggle-label-mobile">AR</span></button>
+                <button class="text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
-        <!-- Mobile Menu Team -->
-        <div id="mobile-menu-team"
-            class="hidden md:hidden bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 p-4 absolute w-full top-20 left-0 z-40 shadow-lg">
-            <a class="block py-2 px-4 hover:bg-slate-200 dark:hover:bg-slate-800 rounded font-mono uppercase text-sm"
-                href="index.html">Home</a>
-            <a class="block py-2 px-4 text-primary dark:text-secondary font-bold bg-slate-200 dark:bg-slate-800 rounded font-mono uppercase text-sm"
-                href="team.html">Team</a>
-            <a class="block py-2 px-4 hover:bg-slate-200 dark:hover:bg-slate-800 rounded font-mono uppercase text-sm"
-                href="tracks.html">Tracks</a>
-            <a class="block py-2 px-4 hover:bg-slate-200 dark:hover:bg-slate-800 rounded font-mono uppercase text-sm"
-                href="https://forms.gle/Sh9GVM1qyrJsX6cZ8" target="_blank" rel="noopener">Join</a>
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-b border-gray-100 p-4 absolute w-full top-16 left-0 z-40 shadow-lg">
+            <a class="block py-2 px-4 rounded font-medium text-gray-700 hover:bg-gray-50" href="index.html"
+                data-i18n="nav_home">Home</a>
+            <a class="block py-2 px-4 rounded font-medium text-primary bg-gray-50" href="team.html"
+                data-i18n="nav_team">Team</a>
+            <a class="block py-2 px-4 rounded font-medium text-gray-700 hover:bg-gray-50" href="tracks.html"
+                data-i18n="nav_committees">Committees</a>
+            <a class="block py-2 px-4 rounded font-medium text-gray-700 hover:bg-gray-50"
+                href="https://forms.gle/Sh9GVM1qyrJsX6cZ8" target="_blank" rel="noopener"
+                data-i18n="nav_join">Join</a>
         </div>
     </header>
-    <main class="flex-grow tech-grid relative">
-        <div
-            class="absolute top-0 right-0 w-1/3 h-full bg-slate-100 dark:bg-slate-900/50 -z-10 hidden lg:block border-l border-slate-200 dark:border-slate-800">
-        </div>
+
+    <main id="main" class="tech-grid">
         <div class="max-w-7xl mx-auto px-6 py-16 lg:py-24">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-                <div class="lg:col-span-3 lg:sticky lg:top-32 h-fit">
+                <div class="lg:col-span-3 lg:sticky lg:top-24 h-fit">
                     <div class="flex flex-col gap-4">
                         <div class="h-1 w-12 bg-secondary mb-2"></div>
-                        <h2
-                            class="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">
-                            Our<br />Structure
-                        </h2>
-                        <p
-                            class="font-mono text-xs text-slate-500 dark:text-slate-400 mt-4 leading-relaxed max-w-xs uppercase tracking-wide">
-                            // Board: Announcing Soon<br />
+                        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight" data-i18n="team_title">
+                            Our Structure</h1>
+                        <p class="font-mono text-xs text-gray-500 mt-4 leading-relaxed max-w-xs uppercase tracking-wide"
+                            dir="ltr">
+                            // <span data-i18n="team_board_status">Board: Announcing Soon</span><br />
                             // Horus University<br />
-                            // Status: Active
+                            // <span data-i18n="team_status">Status: Active</span>
                         </p>
-                        <p
-                            class="text-slate-600 dark:text-slate-400 mt-4 text-sm leading-relaxed border-l-2 border-slate-200 dark:border-slate-700 pl-4">
-                            Driven by students, for students. We are building the next generation of AI researchers and
-                            engineers.
-                        </p>
+                        <p class="text-gray-600 mt-4 text-sm leading-relaxed border-l-2 border-gray-200 pl-4"
+                            data-i18n="team_blurb">150+ students. One open-source community, organized around Learn,
+                            Build, Share, Evolve — open access to knowledge for every student at Horus University.</p>
                     </div>
                 </div>
                 <div class="lg:col-span-9">
-                    <div
-                        class="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-200 dark:bg-slate-800 border border-slate-200 dark:border-slate-800">
-                        <div
-                            class="bg-background-light dark:bg-background-dark p-8 md:col-span-2 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-200 border border-gray-200 rounded-xl overflow-hidden">
+                        <div class="bg-white p-8 md:col-span-2 group hover:bg-gray-50 transition-colors">
                             <span
-                                class="inline-block px-2 py-1 mb-3 text-xs font-mono font-medium text-primary bg-primary/10 dark:text-secondary dark:bg-secondary/10 uppercase tracking-wider rounded-sm">
-                                01 — Leadership
-                            </span>
+                                class="inline-block px-2 py-1 mb-3 text-xs font-mono font-medium text-primary bg-primary/10 uppercase tracking-wider rounded-sm">01
+                                — <span data-i18n="team_leadership">Leadership</span></span>
                             <div class="flex flex-col md:flex-row md:items-end justify-between gap-2">
                                 <div>
-                                    <h3
-                                        class="font-display text-2xl font-semibold text-slate-900 dark:text-white group-hover:text-primary dark:group-hover:text-secondary transition-colors">
-                                        Coming Soon</h3>
-                                    <p class="font-mono text-sm text-slate-500 dark:text-slate-400 mt-1">President</p>
+                                    <h3 class="font-bold text-2xl text-gray-900 group-hover:text-primary transition-colors"
+                                        data-i18n="coming_soon">Coming Soon</h3>
+                                    <p class="font-mono text-sm text-gray-500 mt-1" data-i18n="role_president">
+                                        President</p>
                                 </div>
-                                <div class="hidden md:block w-12 h-px bg-slate-300 dark:bg-slate-700 mb-2"></div>
                             </div>
                         </div>
-                        <div
-                            class="bg-background-light dark:bg-background-dark p-8 md:col-span-2 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
+                        <div class="bg-white p-8 md:col-span-2 group hover:bg-gray-50 transition-colors">
                             <span
-                                class="inline-block px-2 py-1 mb-3 text-xs font-mono font-medium text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 uppercase tracking-wider rounded-sm">
-                                02 — Leadership &amp; Research
-                            </span>
-                            <h3
-                                class="font-display text-2xl font-semibold text-slate-900 dark:text-white group-hover:text-primary dark:group-hover:text-secondary transition-colors">
-                                Coming Soon</h3>
-                            <p class="font-mono text-sm text-slate-500 dark:text-slate-400 mt-1">Co-President &amp;
-                                Scientific Research Lead</p>
+                                class="inline-block px-2 py-1 mb-3 text-xs font-mono font-medium text-gray-500 bg-gray-100 uppercase tracking-wider rounded-sm">02
+                                — <span data-i18n="team_leadership_research">Leadership & Research</span></span>
+                            <h3 class="font-bold text-2xl text-gray-900 group-hover:text-primary transition-colors"
+                                data-i18n="coming_soon">Coming Soon</h3>
+                            <p class="font-mono text-sm text-gray-500 mt-1" data-i18n="role_copresident">
+                                Co-President & Scientific Research Lead</p>
                         </div>
-                        <div
-                            class="bg-background-light dark:bg-background-dark p-8 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
+
+                        <div class="bg-white p-8 group hover:bg-gray-50 transition-colors">
                             <div class="h-full flex flex-col justify-between">
-                                <span
-                                    class="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase mb-4 block">///
-                                    Tech</span>
+                                <span class="text-xs font-mono text-gray-400 uppercase mb-4 block" dir="ltr">/// SEC-01</span>
                                 <div>
-                                    <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">
-                                        Coming Soon</h3>
-                                    <p class="font-mono text-sm text-primary dark:text-secondary mt-1">Technical Head
+                                    <h3 class="font-bold text-xl text-gray-900" data-i18n="coming_soon">Coming Soon
+                                    </h3>
+                                    <p class="font-mono text-sm text-primary mt-1" data-i18n="role_hr">HR Lead</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-8 group hover:bg-gray-50 transition-colors">
+                            <div class="h-full flex flex-col justify-between">
+                                <span class="text-xs font-mono text-gray-400 uppercase mb-4 block" dir="ltr">/// SEC-02</span>
+                                <div>
+                                    <h3 class="font-bold text-xl text-gray-900" data-i18n="coming_soon">Coming Soon
+                                    </h3>
+                                    <p class="font-mono text-sm text-primary mt-1" data-i18n="role_pr">PR Lead</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-8 group hover:bg-gray-50 transition-colors">
+                            <div class="h-full flex flex-col justify-between">
+                                <span class="text-xs font-mono text-gray-400 uppercase mb-4 block" dir="ltr">/// TRK-03</span>
+                                <div>
+                                    <h3 class="font-bold text-xl text-gray-900" data-i18n="coming_soon">Coming Soon
+                                    </h3>
+                                    <p class="font-mono text-sm text-primary mt-1" data-i18n="role_tech">Technology &
+                                        Software Lead</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-8 group hover:bg-gray-50 transition-colors">
+                            <div class="h-full flex flex-col justify-between">
+                                <span class="text-xs font-mono text-gray-400 uppercase mb-4 block" dir="ltr">/// TRK-01</span>
+                                <div>
+                                    <h3 class="font-bold text-xl text-gray-900" data-i18n="coming_soon">Coming Soon
+                                    </h3>
+                                    <p class="font-mono text-sm text-primary mt-1" data-i18n="role_ai">AI/ML Lead</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-8 group hover:bg-gray-50 transition-colors">
+                            <div class="h-full flex flex-col justify-between">
+                                <span class="text-xs font-mono text-gray-400 uppercase mb-4 block" dir="ltr">/// TRK-02</span>
+                                <div>
+                                    <h3 class="font-bold text-xl text-gray-900" data-i18n="coming_soon">Coming Soon
+                                    </h3>
+                                    <p class="font-mono text-sm text-primary mt-1" data-i18n="role_cyber">
+                                        Cybersecurity/CTFs Lead</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-8 group hover:bg-gray-50 transition-colors">
+                            <div class="h-full flex flex-col justify-between">
+                                <span class="text-xs font-mono text-gray-400 uppercase mb-4 block" dir="ltr">/// SEC-03</span>
+                                <div>
+                                    <h3 class="font-bold text-xl text-gray-900" data-i18n="coming_soon">Coming Soon
+                                    </h3>
+                                    <p class="font-mono text-sm text-primary mt-1" data-i18n="role_events">Events &
+                                        Operations Lead</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-8 group hover:bg-gray-50 transition-colors">
+                            <div class="h-full flex flex-col justify-between">
+                                <span class="text-xs font-mono text-gray-400 uppercase mb-4 block" dir="ltr">/// SEC-04</span>
+                                <div>
+                                    <h3 class="font-bold text-xl text-gray-900" data-i18n="coming_soon">Coming Soon
+                                    </h3>
+                                    <p class="font-mono text-sm text-primary mt-1" data-i18n="role_media">Media Lead
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div
-                            class="bg-background-light dark:bg-background-dark p-8 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
+                        <div class="bg-white p-8 group hover:bg-gray-50 transition-colors">
                             <div class="h-full flex flex-col justify-between">
-                                <span
-                                    class="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase mb-4 block">///
-                                    Docs</span>
+                                <span class="text-xs font-mono text-gray-400 uppercase mb-4 block" dir="ltr">/// SEC-05</span>
                                 <div>
-                                    <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">
-                                        Coming Soon</h3>
-                                    <p class="font-mono text-sm text-primary dark:text-secondary mt-1">Documentation
-                                        Lead</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-background-light dark:bg-background-dark p-8 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
-                            <div class="h-full flex flex-col justify-between">
-                                <span
-                                    class="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase mb-4 block">///
-                                    Relations</span>
-                                <div>
-                                    <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">
-                                        Coming Soon</h3>
-                                    <p class="font-mono text-sm text-primary dark:text-secondary mt-1">PR Lead</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-background-light dark:bg-background-dark p-8 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
-                            <div class="h-full flex flex-col justify-between">
-                                <span
-                                    class="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase mb-4 block">///
-                                    People</span>
-                                <div>
-                                    <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">
-                                        Coming Soon</h3>
-                                    <p class="font-mono text-sm text-primary dark:text-secondary mt-1">HR Lead</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-background-light dark:bg-background-dark p-8 md:col-span-2 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
-                            <span class="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase mb-4 block">///
-                                Logistics</span>
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                                <p
-                                    class="font-mono text-sm text-primary dark:text-secondary uppercase tracking-wider w-32 shrink-0">
-                                    Events &amp;<br />Operations</p>
-                                <div class="flex flex-col sm:flex-row gap-6 sm:gap-12">
-                                    <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">
-                                        Coming Soon</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-background-light dark:bg-background-dark p-8 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
-                            <div class="h-full flex flex-col justify-between">
-                                <span
-                                    class="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase mb-4 block">///
-                                    Media</span>
-                                <div>
-                                    <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">
-                                        Coming Soon</h3>
-                                    <p class="font-mono text-sm text-primary dark:text-secondary mt-1">Media Lead</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-background-light dark:bg-background-dark p-8 group hover:bg-white dark:hover:bg-slate-900 transition-colors">
-                            <div class="h-full flex flex-col justify-between">
-                                <span
-                                    class="text-xs font-mono text-slate-400 dark:text-slate-500 uppercase mb-4 block">///
-                                    Finance</span>
-                                <div>
-                                    <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white">
-                                        Coming Soon</h3>
-                                    <p class="font-mono text-sm text-primary dark:text-secondary mt-1">Finance Lead</p>
+                                    <h3 class="font-bold text-xl text-gray-900" data-i18n="coming_soon">Coming Soon
+                                    </h3>
+                                    <p class="font-mono text-sm text-primary mt-1" data-i18n="role_content">Content
+                                        Creation Lead</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div
-                        class="mt-4 flex justify-between items-center text-[10px] font-mono text-slate-400 dark:text-slate-600 uppercase tracking-widest">
+                        class="mt-4 flex justify-between items-center text-[10px] font-mono text-gray-400 uppercase tracking-widest">
                         <span>Sys.Ver.2.4</span>
                         <span>EVOLVE</span>
                     </div>
@@ -284,36 +253,56 @@
             </div>
         </div>
     </main>
-    <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-12">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="col-span-1 md:col-span-2">
-                <div class="flex items-center gap-2 mb-4">
-                    <span class="w-2 h-2 bg-primary"></span>
-                    <span class="font-display font-bold text-lg text-slate-900 dark:text-white">EVOLVE</span>
-                </div>
-                <p class="text-sm text-slate-500 dark:text-slate-400 max-w-sm">
-                    Advancing Egypt’s technology ecosystem through open-source innovation and student-led research.
-                </p>
-            </div>
-            <div>
-                <h4 class="font-mono text-xs font-semibold text-slate-900 dark:text-white uppercase mb-4">Coordinates
-                </h4>
-                <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
-                    <li>Cairo, Egypt</li>
-                    <li>contact@aisu.org</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-mono text-xs font-semibold text-slate-900 dark:text-white uppercase mb-4">Social</h4>
-                <div class="flex gap-4">
-                    <a class="text-slate-400 hover:text-primary dark:hover:text-white transition-colors"
-                        href="https://www.instagram.com/evolve_hue" target="_blank" rel="noopener">Instagram</a>
-                    <a class="text-slate-400 hover:text-primary dark:hover:text-white transition-colors"
-                        href="https://github.com/A-I-S-U" target="_blank" rel="noopener">GitHub</a>
-                </div>
+
+    <footer class="bg-primary text-white py-20 text-center mt-4">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4" data-i18n="footer_cta_title">Ready to commit to the future?</h2>
+            <p class="text-gray-300 text-lg mb-8 max-w-xl mx-auto leading-relaxed" data-i18n="footer_cta_desc">Join a
+                community where your contributions are measured in lines of code, impact, and growth.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://forms.gle/Sh9GVM1qyrJsX6cZ8" target="_blank" rel="noopener"
+                    class="w-full sm:w-auto px-8 py-3 bg-secondary text-gray-900 font-bold rounded hover:bg-yellow-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                    data-i18n="footer_cta_apply">Apply for Membership</a>
+                <a href="https://github.com/A-I-S-U" target="_blank" rel="noopener"
+                    class="w-full sm:w-auto px-8 py-3 bg-transparent border border-secondary text-white font-bold rounded hover:bg-white/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                    data-i18n="footer_cta_github">View GitHub</a>
             </div>
         </div>
     </footer>
+    <div class="bg-white border-t border-gray-100 py-6">
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-gray-400 uppercase">
+            <span data-i18n="footer_copyright">© 2026 EVOLVE Community. Open Source.</span>
+            <div class="flex items-center gap-4">
+                <a class="hover:text-gray-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    href="https://github.com/A-I-S-U" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                        <path clip-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                            fill-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a class="hover:text-gray-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    href="https://www.instagram.com/evolve_hue" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                        </path>
+                    </svg>
+                </a>
+                <a class="hover:text-gray-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    href="https://chat.whatsapp.com/BqktAXW5zgv1pUH0UgRROd" target="_blank" rel="noopener"
+                    aria-label="WhatsApp">
+                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M12.04 2c-5.523 0-10 4.477-10 10 0 1.766.462 3.492 1.34 5.012L2 22l5.128-1.345A9.96 9.96 0 0012.04 22c5.523 0 10-4.477 10-10s-4.477-10-10-10zm0 18.166a8.14 8.14 0 01-4.152-1.135l-.298-.177-3.043.798.812-2.968-.194-.305a8.128 8.128 0 01-1.243-4.35c0-4.49 3.653-8.143 8.144-8.143 2.175 0 4.219.847 5.757 2.386a8.086 8.086 0 012.386 5.757c0 4.49-3.653 8.143-8.169 8.143zm4.463-6.097c-.245-.123-1.45-.716-1.674-.798-.224-.082-.387-.123-.55.123-.163.245-.632.798-.775.961-.143.163-.286.184-.53.061-.245-.123-1.033-.381-1.968-1.213-.727-.648-1.218-1.45-1.36-1.694-.143-.245-.015-.377.108-.499.11-.11.245-.286.367-.429.123-.143.163-.245.245-.408.082-.163.041-.306-.02-.428-.061-.123-.55-1.326-.754-1.816-.198-.477-.4-.412-.55-.42-.143-.007-.306-.009-.47-.009a.9.9 0 00-.653.306c-.224.245-.857.837-.857 2.04 0 1.204.877 2.367 1 2.53.122.163 1.727 2.636 4.183 3.696.585.253 1.04.404 1.396.517.586.187 1.12.16 1.542.097.47-.07 1.45-.593 1.654-1.165.204-.572.204-1.062.143-1.165-.061-.102-.224-.163-.47-.286z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="assets/i18n.js"></script>
 </body>
 
 </html>

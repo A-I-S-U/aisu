@@ -1,137 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>EVOLVE - Tracks & Sectors</title>
-    <meta name="description" content="Explore EVOLVE's technical tracks (AI, Web Dev, Data Analysis, Flutter, Robotics, Cyber Security) and non-technical sectors." />
+    <title>EVOLVE - Committees</title>
+    <meta name="description"
+        content="EVOLVE's 8 committees: HR, PR, Technology & Software, AI/ML, Cybersecurity/CTFs, Events & Operations, Media, and Content Creation." />
     <link rel="canonical" href="https://a-i-s-u.me/tracks.html" />
     <link rel="icon" type="image/jpeg" href="assets/logo-icon.jpg" />
-    <meta property="og:title" content="EVOLVE - Tracks & Sectors" />
-    <meta property="og:description" content="Explore EVOLVE's technical tracks (AI, Web Dev, Data Analysis, Flutter, Robotics, Cyber Security) and non-technical sectors." />
+    <meta property="og:title" content="EVOLVE - Committees" />
+    <meta property="og:description"
+        content="EVOLVE's 8 committees: HR, PR, Technology & Software, AI/ML, Cybersecurity/CTFs, Events & Operations, Media, and Content Creation." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://a-i-s-u.me/tracks.html" />
     <meta property="og:image" content="https://a-i-s-u.me/assets/logo-icon.jpg" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="EVOLVE - Tracks & Sectors" />
-    <meta name="twitter:description" content="Explore EVOLVE's technical tracks (AI, Web Dev, Data Analysis, Flutter, Robotics, Cyber Security) and non-technical sectors." />
+    <meta name="twitter:title" content="EVOLVE - Committees" />
+    <meta name="twitter:description"
+        content="EVOLVE's 8 committees: HR, PR, Technology & Software, AI/ML, Cybersecurity/CTFs, Events & Operations, Media, and Content Creation." />
     <meta name="twitter:image" content="https://a-i-s-u.me/assets/logo-icon.jpg" />
-    <!-- Load Tailwind CSS v3 -->
+    <script>
+        (function () { try { var l = localStorage.getItem('evolve_lang') || 'en'; document.documentElement.lang = l; document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr'; } catch (e) { } })();
+    </script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <!-- Load Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Roboto+Mono:wght@400;500&amp;family=Cairo:wght@400;500;600;700&amp;display=swap"
         rel="stylesheet" />
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['Roboto Mono', 'monospace'],
-                    },
-                    colors: {
-                        primary: '#0D1B2A', // Deep Navy Blue from logo
-                        accent: '#E74C3C', // Red from logo
-                        'accent-dark': '#b8331f',
-                        'secondary': '#F5A623', // Gold/Orange from logo
-                        'bg-card': '#ffffff',
-                        'border-light': '#e5e7eb',
-                    }
-                }
-            }
-        }
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['Roboto Mono', 'monospace'], arabic: ['Cairo', 'sans-serif'] }, colors: { primary: '#0D1B2A', accent: '#E74C3C', secondary: '#F5A623', 'aisu-bg': '#F7F7F7' } } } }
     </script>
-    <style data-purpose="custom-grid-background">
-        .bg-graph-paper {
-            background-color: #ffffff;
-            background-image:
-                linear-gradient(to right, #f3f4f6 1px, transparent 1px),
-                linear-gradient(to bottom, #f3f4f6 1px, transparent 1px);
-            background-size: 40px 40px;
-            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
-            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+    <style>
+        html[dir="rtl"] body {
+            font-family: 'Cairo', 'Inter', sans-serif;
+        }
+
+        .sr-only-focusable:not(:focus) {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 700px;
-            z-index: -1;
-            pointer-events: none;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
         }
     </style>
 </head>
 
-<body class="font-sans text-primary antialiased bg-white relative">
-    <!-- Background Grid Pattern -->
-    <div class="bg-graph-paper"></div>
-
-    <!-- BEGIN: MainHeader -->
-    <header class="w-full pt-6 pb-4 px-6 md:px-12 flex justify-between items-center relative z-10">
-        <!-- Logo Section -->
-        <div class="flex items-center gap-3 cursor-pointer" onclick="window.location.href='index.html'">
-            <div
-                class="h-11 w-11 flex items-center justify-center overflow-hidden rounded-full bg-white border border-gray-200 shadow-sm p-1">
-                <img src="assets/logo-icon.jpg" alt="EVOLVE Logo" class="w-full h-full object-contain">
+<body data-page="tracks" class="font-sans text-gray-900 antialiased bg-aisu-bg">
+    <a href="#main"
+        class="sr-only-focusable focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-secondary focus:text-primary focus:px-4 focus:py-2 focus:rounded focus:font-bold"
+        data-i18n="skip_link">Skip to content</a>
+    <header class="w-full bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <div
+                    class="w-11 h-11 rounded-full flex items-center justify-center overflow-hidden bg-white border border-gray-200 shadow-sm p-1">
+                    <img src="assets/logo-icon.jpg" alt="EVOLVE Logo" class="w-full h-full object-contain">
+                </div>
+                <div class="leading-none">
+                    <span class="block font-bold tracking-tight text-lg text-primary">EVOLVE<span
+                            class="text-secondary">.</span></span>
+                    <span class="block text-[10px] font-semibold tracking-widest text-gray-500 uppercase"
+                        data-i18n="subtitle">AISU HUE Community</span>
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+                <a class="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded transition-colors"
+                    href="index.html" data-i18n="nav_home">Home</a>
+                <a class="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded transition-colors"
+                    href="team.html" data-i18n="nav_team">Team</a>
+                <a class="text-primary font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    href="tracks.html" data-i18n="nav_committees">Committees</a>
+                <a class="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded transition-colors"
+                    href="https://forms.gle/Sh9GVM1qyrJsX6cZ8" target="_blank" rel="noopener"
+                    data-i18n="nav_join">Join</a>
+                <button id="lang-toggle" type="button"
+                    class="px-3 py-1.5 rounded-full border border-gray-200 text-xs font-bold text-gray-600 hover:border-secondary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
+                    aria-label="Toggle language"><span id="lang-toggle-label">العربية</span></button>
+            </nav>
+            <div class="flex items-center gap-2 md:hidden">
+                <button id="lang-toggle-mobile" type="button"
+                    class="px-2.5 py-1 rounded-full border border-gray-200 text-xs font-bold text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary">
+                    <span id="lang-toggle-label-mobile">AR</span></button>
+                <button class="text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2"></path>
+                    </svg>
+                </button>
             </div>
-            <span class="text-xl font-bold tracking-tight text-gray-600">EVOLVE <span
-                    class="text-gray-400 font-normal">AISU HUE</span></span>
         </div>
-        <!-- Navigation Links -->
-        <nav class="hidden md:flex items-center gap-8">
-            <a class="font-mono text-sm text-gray-500 hover:text-accent transition-colors" href="index.html">/home</a>
-            <a class="font-mono text-sm text-gray-500 hover:text-accent transition-colors" href="team.html">/team</a>
-            <a class="font-mono text-sm text-gray-900 font-semibold border-b-2 border-transparent hover:border-accent transition-all"
-                href="tracks.html">/tracks</a>
-            <a class="font-mono text-sm text-gray-500 hover:text-accent transition-colors"
-                href="https://forms.gle/Sh9GVM1qyrJsX6cZ8" target="_blank" rel="noopener">/join</a>
-        </nav>
-        <!-- Mobile Menu Button -->
-        <button class="md:hidden text-gray-500"
-            onclick="document.getElementById('mobile-menu-tracks').classList.toggle('hidden')">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-            </svg>
-        </button>
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-b border-gray-100 p-4 absolute w-full top-16 left-0 z-40 shadow-lg">
+            <a class="block py-2 px-4 rounded font-medium text-gray-700 hover:bg-gray-50" href="index.html"
+                data-i18n="nav_home">Home</a>
+            <a class="block py-2 px-4 rounded font-medium text-gray-700 hover:bg-gray-50" href="team.html"
+                data-i18n="nav_team">Team</a>
+            <a class="block py-2 px-4 rounded font-medium text-primary bg-gray-50" href="tracks.html"
+                data-i18n="nav_committees">Committees</a>
+            <a class="block py-2 px-4 rounded font-medium text-gray-700 hover:bg-gray-50"
+                href="https://forms.gle/Sh9GVM1qyrJsX6cZ8" target="_blank" rel="noopener"
+                data-i18n="nav_join">Join</a>
+        </div>
     </header>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu-tracks"
-        class="hidden md:hidden bg-white border-b border-gray-100 p-4 absolute w-full top-20 left-0 z-40 shadow-lg">
-        <a class="block py-2 px-4 hover:bg-gray-50 rounded font-mono text-sm" href="index.html">/home</a>
-        <a class="block py-2 px-4 hover:bg-gray-50 rounded font-mono text-sm" href="team.html">/team</a>
-        <a class="block py-2 px-4 text-accent font-bold bg-gray-50 rounded font-mono text-sm"
-            href="tracks.html">/tracks</a>
-        <a class="block py-2 px-4 hover:bg-gray-50 rounded font-mono text-sm"
-            href="https://forms.gle/Sh9GVM1qyrJsX6cZ8" target="_blank" rel="noopener">/join</a>
-    </div>
-    <!-- END: MainHeader -->
 
-    <!-- BEGIN: HeroSection -->
-    <section class="px-6 md:px-12 pt-16 pb-16 max-w-7xl mx-auto relative z-10">
-        <!-- Version Tag -->
-        <div class="inline-flex items-center bg-blue-50 border border-blue-100 rounded-full px-3 py-1 mb-6">
-            <span class="h-2 w-2 rounded-full bg-secondary mr-2"></span>
-            <span class="font-mono text-xs text-primary font-medium tracking-wide">SYSTEM_OVERVIEW v2.0</span>
+    <section class="relative px-6 pt-16 pb-12 max-w-7xl mx-auto">
+        <div class="absolute inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+        <div class="relative z-10">
+            <div class="inline-flex items-center bg-blue-50 border border-blue-100 rounded-full px-3 py-1 mb-6">
+                <span class="h-2 w-2 rounded-full bg-secondary mr-2"></span>
+                <span class="font-mono text-xs text-primary font-medium tracking-wide" data-i18n="committees_badge">150+
+                    MEMBERS · 8 COMMITTEES</span>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6" data-i18n="committees_title">Our
+                Committees</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed" data-i18n="committees_desc">Every
+                student who joins EVOLVE finds a home in one of these 8 committees — technical or not, there's a seat
+                for you.</p>
         </div>
-        <!-- Main Title -->
-        <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-            Tracks &amp; <span class="text-primary">Sectors</span>
-        </h1>
-        <!-- Description -->
-        <p class="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
-            Discover your role in EVOLVE. Whether you build the future with code or shape it through
-            operations, every unit is critical to our ecosystem.
-        </p>
     </section>
-    <!-- END: HeroSection -->
 
-    <!-- BEGIN: MainContent -->
-    <main class="px-6 md:px-12 pb-24 max-w-7xl mx-auto">
+    <main id="main" class="px-6 pb-24 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-            <!-- BEGIN: TechnicalTracks (Left Column) -->
             <div class="lg:col-span-7 flex flex-col gap-6">
                 <div class="flex justify-between items-center border-b border-gray-200 pb-4">
                     <div class="flex items-center gap-2">
@@ -140,95 +143,43 @@
                                 d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
                         </svg>
-                        <h2 class="text-xl font-semibold">Technical Tracks</h2>
+                        <h2 class="text-xl font-semibold" data-i18n="technical_label">Technical</h2>
                     </div>
                     <span class="bg-gray-100 text-gray-500 text-xs font-mono px-2 py-1 rounded">MOD_TECH</span>
                 </div>
-                <!-- Cards Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Card 1: AI -->
                     <article
-                        class="cursor-pointer bg-white border rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col h-full shadow-sm border-gray-100"
+                        class="cursor-pointer bg-white border rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col h-full shadow-sm border-gray-100 focus-within:ring-2 focus-within:ring-secondary"
                         onclick="window.location.href='tracks/ai.html'">
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="font-mono text-xs text-gray-400">TRK-01</span>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2">Artificial Intelligence</h3>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
-                            Machine learning models, neural networks, and deep learning...
-                        </p>
-                        <div class="h-1 w-8 bg-gray-100 rounded"></div>
+                        <span class="font-mono text-xs text-gray-400 mb-4 block">TRK-01</span>
+                        <h3 class="text-lg font-bold mb-2" data-i18n="ai_name">AI/ML</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed flex-grow" data-i18n="ai_card_desc">Machine
+                            learning, deep learning, and NLP.</p>
+                        <a href="tracks/ai.html" class="text-sm font-bold text-accent mt-4"
+                            data-i18n="learn_more">Learn more →</a>
                     </article>
-                    <!-- Card 2: Data Analysis -->
                     <article
-                        class="cursor-pointer bg-white border rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col h-full shadow-sm border-gray-100"
-                        onclick="window.location.href='tracks/data_analysis.html'">
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="font-mono text-xs text-gray-400">TRK-02</span>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2">Data Analysis</h3>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
-                            Transforming raw data into actionable insights using Python...
-                        </p>
-                        <div class="h-1 w-8 bg-gray-100 rounded"></div>
-                    </article>
-                    <!-- Card 3: Web Dev -->
-                    <article
-                        class="cursor-pointer bg-white border rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col h-full shadow-sm border-gray-100"
-                        onclick="window.location.href='tracks/web_development.html'">
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="font-mono text-xs text-gray-400">TRK-03</span>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2">Web Development</h3>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
-                            Building scalable full-stack applications for the modern web.
-                        </p>
-                        <div class="h-1 w-8 bg-gray-100 rounded"></div>
-                    </article>
-                    <!-- Card 4: Flutter -->
-                    <article
-                        class="cursor-pointer bg-white border rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col h-full shadow-sm border-gray-100"
-                        onclick="window.location.href='tracks/flutter.html'">
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="font-mono text-xs text-gray-400">TRK-04</span>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2">Flutter</h3>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
-                            Cross-platform mobile application development with a single codebase.
-                        </p>
-                        <div class="h-1 w-8 bg-gray-100 rounded"></div>
-                    </article>
-                    <!-- Card 5: Robotics -->
-                    <article
-                        class="cursor-pointer bg-white border rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col h-full shadow-sm border-gray-100"
-                        onclick="window.location.href='tracks/robotics.html'">
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="font-mono text-xs text-gray-400">TRK-05</span>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2">Robotics</h3>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
-                            Hardware integration, embedded systems, and autonomous agents.
-                        </p>
-                        <div class="h-1 w-8 bg-gray-100 rounded"></div>
-                    </article>
-                    <!-- Card 6: Cyber Security -->
-                    <article
-                        class="cursor-pointer bg-white border rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col h-full shadow-sm border-gray-100"
+                        class="cursor-pointer bg-white border rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col h-full shadow-sm border-gray-100 focus-within:ring-2 focus-within:ring-secondary"
                         onclick="window.location.href='tracks/cyber_security.html'">
-                        <div class="flex justify-between items-start mb-4">
-                            <span class="font-mono text-xs text-gray-400">TRK-06</span>
-                        </div>
-                        <h3 class="text-lg font-bold mb-2">Cyber Security</h3>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-4 flex-grow">
-                            Network defense, ethical hacking, and information assurance.
-                        </p>
-                        <div class="h-1 w-8 bg-gray-100 rounded"></div>
+                        <span class="font-mono text-xs text-gray-400 mb-4 block">TRK-02</span>
+                        <h3 class="text-lg font-bold mb-2" data-i18n="cyber_name">Cybersecurity/CTFs</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed flex-grow" data-i18n="cyber_card_desc">
+                            Ethical hacking, network security, and CTFs.</p>
+                        <a href="tracks/cyber_security.html" class="text-sm font-bold text-accent mt-4"
+                            data-i18n="learn_more">Learn more →</a>
+                    </article>
+                    <article
+                        class="cursor-pointer bg-white border rounded-xl p-6 hover:shadow-md transition-shadow flex flex-col h-full shadow-sm border-gray-100 md:col-span-2 focus-within:ring-2 focus-within:ring-secondary"
+                        onclick="window.location.href='tracks/technology_software.html'">
+                        <span class="font-mono text-xs text-gray-400 mb-4 block">TRK-03</span>
+                        <h3 class="text-lg font-bold mb-2" data-i18n="tech_name">Technology & Software</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed flex-grow" data-i18n="tech_card_desc">Web
+                            development, data analysis, mobile, and robotics.</p>
+                        <a href="tracks/technology_software.html" class="text-sm font-bold text-accent mt-4"
+                            data-i18n="learn_more">Learn more →</a>
                     </article>
                 </div>
             </div>
-            <!-- END: TechnicalTracks -->
-
-            <!-- BEGIN: NonTechnicalSectors (Right Column) -->
             <div class="lg:col-span-5 flex flex-col gap-6">
                 <div class="flex justify-between items-center border-b border-gray-200 pb-4">
                     <div class="flex items-center gap-2">
@@ -237,31 +188,12 @@
                                 d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
                         </svg>
-                        <h2 class="text-xl font-semibold">Non-Technical Sectors</h2>
+                        <h2 class="text-xl font-semibold" data-i18n="non_technical_label">Non-Technical</h2>
                     </div>
                     <span class="bg-gray-100 text-gray-500 text-xs font-mono px-2 py-1 rounded">MOD_OPS</span>
                 </div>
-                <!-- Vertical Stack -->
                 <div class="flex flex-col gap-4">
-                    <!-- Sector 1 -->
-                    <div class="bg-white border border-border-light rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm"
-                        onclick="window.location.href='sectors/public_relations.html'">
-                        <div
-                            class="h-12 w-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
-                            <svg class="h-6 w-6 text-gray-600 opacity-80" fill="none" stroke="currentColor"
-                                viewbox="0 0 24 24">
-                                <path
-                                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-gray-900">Public Relations</h3>
-                            <p class="font-mono text-xs text-gray-400 mt-1">SEC-01</p>
-                        </div>
-                    </div>
-                    <!-- Sector 2 -->
-                    <div class="bg-white border border-border-light rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm"
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm focus-within:ring-2 focus-within:ring-secondary"
                         onclick="window.location.href='sectors/human_resources.html'">
                         <div
                             class="h-12 w-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
@@ -273,12 +205,27 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="font-bold text-gray-900">Human Resources</h3>
+                            <h3 class="font-bold text-gray-900" data-i18n="hr_name">Human Resources</h3>
+                            <p class="font-mono text-xs text-gray-400 mt-1">SEC-01</p>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm focus-within:ring-2 focus-within:ring-secondary"
+                        onclick="window.location.href='sectors/public_relations.html'">
+                        <div
+                            class="h-12 w-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
+                            <svg class="h-6 w-6 text-gray-600 opacity-80" fill="none" stroke="currentColor"
+                                viewbox="0 0 24 24">
+                                <path
+                                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900" data-i18n="pr_name">Public Relations</h3>
                             <p class="font-mono text-xs text-gray-400 mt-1">SEC-02</p>
                         </div>
                     </div>
-                    <!-- Sector 3 -->
-                    <div class="bg-white border border-border-light rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm"
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm focus-within:ring-2 focus-within:ring-secondary"
                         onclick="window.location.href='sectors/events_ops.html'">
                         <div
                             class="h-12 w-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
@@ -290,12 +237,11 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="font-bold text-gray-900">Events &amp; Ops</h3>
+                            <h3 class="font-bold text-gray-900" data-i18n="events_name">Events & Operations</h3>
                             <p class="font-mono text-xs text-gray-400 mt-1">SEC-03</p>
                         </div>
                     </div>
-                    <!-- Sector 4 -->
-                    <div class="bg-white border border-border-light rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm"
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm focus-within:ring-2 focus-within:ring-secondary"
                         onclick="window.location.href='sectors/media.html'">
                         <div
                             class="h-12 w-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
@@ -309,13 +255,12 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="font-bold text-gray-900">Media</h3>
+                            <h3 class="font-bold text-gray-900" data-i18n="media_name">Media</h3>
                             <p class="font-mono text-xs text-gray-400 mt-1">SEC-04</p>
                         </div>
                     </div>
-                    <!-- Sector 5 -->
-                    <div class="bg-white border border-border-light rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm"
-                        onclick="window.location.href='sectors/documentation.html'">
+                    <div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm focus-within:ring-2 focus-within:ring-secondary"
+                        onclick="window.location.href='sectors/content_creation.html'">
                         <div
                             class="h-12 w-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
                             <svg class="h-6 w-6 text-gray-600 opacity-80" fill="none" stroke="currentColor"
@@ -326,55 +271,64 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="font-bold text-gray-900">Documentation</h3>
+                            <h3 class="font-bold text-gray-900" data-i18n="content_name">Content Creation</h3>
                             <p class="font-mono text-xs text-gray-400 mt-1">SEC-05</p>
-                        </div>
-                    </div>
-                    <!-- Sector 6 -->
-                    <div class="bg-white border border-border-light rounded-xl p-4 flex items-center gap-4 hover:border-gray-300 transition-colors cursor-pointer group shadow-sm"
-                        onclick="window.location.href='sectors/finance.html'">
-                        <div
-                            class="h-12 w-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
-                            <svg class="h-6 w-6 text-gray-600 opacity-80" fill="none" stroke="currentColor"
-                                viewbox="0 0 24 24">
-                                <path
-                                    d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-gray-900">Finance</h3>
-                            <p class="font-mono text-xs text-gray-400 mt-1">SEC-06</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- END: NonTechnicalSectors -->
         </div>
     </main>
-    <!-- END: MainContent -->
 
-    <!-- BEGIN: Footer -->
-    <footer class="border-t mt-auto bg-white border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 md:px-12 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center md:items-baseline">
-                <span class="font-bold text-gray-900">EVOLVE</span>
-                <span class="text-sm text-gray-500">AISU HUE Community © 2026</span>
+    <footer class="bg-primary text-white py-20 text-center mt-4">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4" data-i18n="footer_cta_title">Ready to commit to the future?</h2>
+            <p class="text-gray-300 text-lg mb-8 max-w-xl mx-auto leading-relaxed" data-i18n="footer_cta_desc">Join a
+                community where your contributions are measured in lines of code, impact, and growth.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://forms.gle/Sh9GVM1qyrJsX6cZ8" target="_blank" rel="noopener"
+                    class="w-full sm:w-auto px-8 py-3 bg-secondary text-gray-900 font-bold rounded hover:bg-yellow-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                    data-i18n="footer_cta_apply">Apply for Membership</a>
+                <a href="https://github.com/A-I-S-U" target="_blank" rel="noopener"
+                    class="w-full sm:w-auto px-8 py-3 bg-transparent border border-secondary text-white font-bold rounded hover:bg-white/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                    data-i18n="footer_cta_github">View GitHub</a>
             </div>
-            <div>
-                <a class="text-gray-400 hover:text-gray-600 transition-colors" href="https://github.com/A-I-S-U"
-                    target="_blank" rel="noopener">
-                    <svg class="h-6 w-6 opacity-60 hover:opacity-100" fill="currentColor" viewbox="0 0 24 24">
+        </div>
+    </footer>
+    <div class="bg-white border-t border-gray-100 py-6">
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-gray-400 uppercase">
+            <span data-i18n="footer_copyright">© 2026 EVOLVE Community. Open Source.</span>
+            <div class="flex items-center gap-4">
+                <a class="hover:text-gray-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    href="https://github.com/A-I-S-U" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                        <path clip-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                            fill-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a class="hover:text-gray-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    href="https://www.instagram.com/evolve_hue" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
                         <path
-                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                        </path>
+                    </svg>
+                </a>
+                <a class="hover:text-gray-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded"
+                    href="https://chat.whatsapp.com/BqktAXW5zgv1pUH0UgRROd" target="_blank" rel="noopener"
+                    aria-label="WhatsApp">
+                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M12.04 2c-5.523 0-10 4.477-10 10 0 1.766.462 3.492 1.34 5.012L2 22l5.128-1.345A9.96 9.96 0 0012.04 22c5.523 0 10-4.477 10-10s-4.477-10-10-10zm0 18.166a8.14 8.14 0 01-4.152-1.135l-.298-.177-3.043.798.812-2.968-.194-.305a8.128 8.128 0 01-1.243-4.35c0-4.49 3.653-8.143 8.144-8.143 2.175 0 4.219.847 5.757 2.386a8.086 8.086 0 012.386 5.757c0 4.49-3.653 8.143-8.169 8.143zm4.463-6.097c-.245-.123-1.45-.716-1.674-.798-.224-.082-.387-.123-.55.123-.163.245-.632.798-.775.961-.143.163-.286.184-.53.061-.245-.123-1.033-.381-1.968-1.213-.727-.648-1.218-1.45-1.36-1.694-.143-.245-.015-.377.108-.499.11-.11.245-.286.367-.429.123-.143.163-.245.245-.408.082-.163.041-.306-.02-.428-.061-.123-.55-1.326-.754-1.816-.198-.477-.4-.412-.55-.42-.143-.007-.306-.009-.47-.009a.9.9 0 00-.653.306c-.224.245-.857.837-.857 2.04 0 1.204.877 2.367 1 2.53.122.163 1.727 2.636 4.183 3.696.585.253 1.04.404 1.396.517.586.187 1.12.16 1.542.097.47-.07 1.45-.593 1.654-1.165.204-.572.204-1.062.143-1.165-.061-.102-.224-.163-.47-.286z">
                         </path>
                     </svg>
                 </a>
             </div>
         </div>
-    </footer>
-    <!-- END: Footer -->
-
+    </div>
+    <script src="assets/i18n.js"></script>
 </body>
 
 </html>
